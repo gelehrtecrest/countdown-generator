@@ -49,7 +49,7 @@
 		//設定のデフォルト値
 		$('#text').val('あと○日');
 		$('#color').val('white');
-		$('#style').val('bold italic');
+		$('#style').val('bold oblique');
 		$('#font').val('/1.5 Meiryo,sans-serif');
 		$('#px').val('75px');
 
