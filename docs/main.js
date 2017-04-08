@@ -50,7 +50,7 @@
 		$('#text').val('あと○日');
 		$('#color').val('white');
 		$('#style').val('bold italic');
-		$('#font').val('/1.5 Arial');
+		$('#font').val('/1.5 Meiryo,sans-serif');
 		$('#px').val('75px');
 
 		//読込画像のオブジェクト
