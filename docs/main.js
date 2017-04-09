@@ -177,6 +177,7 @@
 		url = url + '&color=' + encodeURIComponent($('#color').val());
 		url = url + '&px=' + encodeURIComponent($('#px').val());
 		url = url + '&style=' + encodeURIComponent($('#style').val());
+		url = url + '&font=' + encodeURIComponent($('#font').val());
 		//ロゴ位置・サイズ
 		url = url + '&xpos=' + imageIni.xPos;
 		url = url + '&ypos=' + imageIni.yPos;
