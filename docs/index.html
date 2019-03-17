@@ -4,8 +4,8 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta description="カウントダウンジェネレータはゲームのスクリーンショットにカウントダウンを載せるためのアプリです。FINAL FANTASY XIVのスクリーンショットでテストしています。">
-		<title>カウントダウンジェネレータ</title>
+		<meta description="文字入れジェネレータはゲームのスクリーンショットに文字入れを載せるためのアプリです。FINAL FANTASY XIVのスクリーンショットでテストしています。">
+		<title>文字入れジェネレータ</title>
 		<script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -25,8 +25,8 @@
 	<body>
 		<div class="jumbotron">
 			<div class="container">
-				<h1>カウントダウン</h1>
-				<p id="comment">カウントダウン日数を合成するだけの簡易的なジェネレータです。</p>
+				<h1>文字入れジェネレータ</h1>
+				<p id="comment">文字を合成するだけの簡易的なジェネレータです。</p>
 			</div>
 		</div>
 		<div class="container">
@@ -41,7 +41,7 @@
 				<div class="col-sm-12">
 					<div class="form-group">
 						<label for="exampleInputEmail1">合成したい文字</label>
-						<input type="text" class="form-control input" id="text" placeholder="カウントダウン日数">
+						<input type="text" class="form-control input" id="text" placeholder="文字入れ">
 					</div>
 				</div>
 				<div class="col-sm-12">
@@ -99,7 +99,20 @@
 				<div id="settingurl" class="alert alert-info"><a href=""></a></div>
 			</div>
 			<div class="module">
-				<h2>生成結果</h2>
+				<h3>生成結果</h3>
+				<div style="display:none">
+					<img id="newImg">
+					<a href="" id="dlImg"></a>
+				</div>
+				<h5>
+					ダウンロードボタンからダウンロード可能です。
+					<button id="btnDownload" class="btn btn-primary">ダウンロード</button>
+				</h5>
+				<h5>
+					スマホなどの場合は、別ウィンドウを開いた方が保存しやすいかもしれません。
+					<button id="btnNewWindow" class="btn btn-primary">別ウィンドウを開く</button>
+				</h5>
+				<h5>もしダウンロードボタンが使えない場合は、生成結果を右クリックしてダウンロードしてください。</h5>
 				<div id="alert" class="alert alert-warning" role="alert"></div>
 				<div class="container canvas-stage">
 					<canvas id="result" width="100%" height="100%"></canvas>
