@@ -158,18 +158,18 @@
 				imageIni.Scale += 1;
 			}else if (e.target.id === 'zoomout') {
 				imageIni.Scale -= 1;
-			}else if (id === 'rotation_r') {
+			}else if (e.target.id === 'rotation_r') {
 				imageIni.rotation += 7.5;
-			}else if (id === 'rotation_l') {
+			}else if (e.target.id === 'rotation_l') {
 				imageIni.rotation -= 7.5;
-			}else if (id === 'alpha_up') {
+			}else if (e.target.id === 'alpha_up') {
 				imageIni.alpha += 0.1;
 				if(imageIni.alpha >= 0.9){
 					imageIni.alpha = 1.0;
 					$('#alpha_up').prop("disabled", true);
 				}
 				$('#alpha_down').prop("disabled", false);
-			}else if (id === 'alpha_down') {
+			}else if (e.target.id === 'alpha_down') {
 				imageIni.alpha -= 0.1;
 				if(imageIni.alpha <= 0.1){
 					imageIni.alpha = 0.0;
