@@ -37,6 +37,10 @@
 		img.scaleX = img.scaleX * (1 + imageIni.Scale / 10);
 		img.scaleY = img.scaleY * (1 + imageIni.Scale / 10);
 
+		//影
+		var shadow = new createjs.Shadow("#cb8a00", 0, 0, 20);
+		img.shadow = shadow;
+
 		//ステージ生成
 		stage.addChild(img2);
 		stage.addChild(img);
@@ -49,8 +53,8 @@
 		//設定のデフォルト値
 		$('#text').val('文字入れジェネレータ');
 		$('#color').val('white');
-		$('#style').val('');
-		$('#font').val('/1.5 Meiryo,sans-serif');
+		$('#style').val('bold');
+		$('#font').val("/1.5 'ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif");
 		$('#px').val('75px');
 
 		//読込画像のオブジェクト
