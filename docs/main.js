@@ -48,10 +48,13 @@
 		img.alpha = imageIni.alpha;	
 	
 		//影
-		try{
-			var shadow = new createjs.Shadow($('#color_shadow').val(), 4, 4, imageIni.shadow);
-			img.shadow = shadow;
-		} catch(e){
+		//影をつけるかチェック
+		if($("#color_shadow_flag").prop("checked")){
+			try{
+				var shadow = new createjs.Shadow($('#color_shadow').val(), 4, 4, imageIni.shadow);
+				img.shadow = shadow;
+			} catch(e){
+			}
 		}
 
 		//ステージ生成
@@ -340,6 +343,20 @@
 		});
 		$('#btnNewWindow').on("click", function() {
 			NewWindow();
+		});
+		// 詳細設定の開閉
+		var setting_more_flag = false;
+		$('#setting_more_btn').click(function () {
+			console.log(setting_more_flag);
+			if(setting_more_flag){
+				setting_more_flag = false;
+		 		$('#setting_more').hide('slow');
+				$('#setting_more_btn').text("詳細設定を開く");	
+			} else {
+				setting_more_flag = true;
+        			$('#setting_more').show('slow');
+				$('#setting_more_btn').text("詳細設定を閉じる");	
+			}
 		});
 	});
 

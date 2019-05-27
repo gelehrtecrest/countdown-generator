@@ -43,35 +43,44 @@
 						<label for="exampleInputEmail1">合成したい文字</label>
 						<input type="text" class="form-control input" id="text" placeholder="文字入れ">
 					</div>
-				</div>
-				<div class="col-sm-12">
 					<div class="form-group">
-						<label for="exampleInputEmail1">フォントカラー</label>
-						<input type="text" class="form-control input" id="color" placeholder="フォントカラー">
+						<label for="exampleInputEmail1">文字に影を入れたい場合チェックを入れる(FF14公式風フォントの仕上がりになります)</label>
+						<input type="checkbox" class="form-control" id="color_shadow_flag" value="1" checked="checked">
+					</div>
+					<div class="form-group">
+						<button id="setting_more_btn" class="btn btn-primary">詳細設定を開く</button>
 					</div>
 				</div>
-				<div class="col-sm-12">
-					<div class="form-group">
-						<label for="exampleInputEmail1">影のカラー</label>
-						<input type="text" class="form-control input" id="color_shadow" placeholder="影のカラー">
+				<div id="setting_more" style="display:none">
+					<div class="col-sm-12">
+						<div class="form-group">
+							<label for="exampleInputEmail1">フォントカラー</label>
+							<input type="text" class="form-control input" id="color" placeholder="フォントカラー">
+						</div>
 					</div>
-				</div>
-				<div class="col-sm-12">
-					<div class="form-group">
-						<label for="exampleInputEmail1">フォントスタイル</label>
-						<input type="text" class="form-control input" id="style" placeholder="フォントスタイル">
+					<div class="col-sm-12">
+						<div class="form-group">
+							<label for="exampleInputEmail1">影のカラー</label>
+							<input type="text" class="form-control input" id="color_shadow" placeholder="影のカラー">
+						</div>
 					</div>
-				</div>
-				<div class="col-sm-12">
-					<div class="form-group">
-						<label for="exampleInputEmail1">フォントサイズ</label>
-						<input type="text" class="form-control input" id="px" placeholder="フォントサイズ">
+					<div class="col-sm-12">
+						<div class="form-group">
+							<label for="exampleInputEmail1">フォントスタイル</label>
+							<input type="text" class="form-control input" id="style" placeholder="フォントスタイル">
+						</div>
 					</div>
-				</div>
-				<div class="col-sm-12">
-					<div class="form-group">
-						<label for="exampleInputEmail1">フォントの種類(CSSショートハンド)</label>
-						<input type="text" class="form-control input" id="font" placeholder="フォントショートハンド">
+					<div class="col-sm-12">
+						<div class="form-group">
+							<label for="exampleInputEmail1">フォントサイズ</label>
+							<input type="text" class="form-control input" id="px" placeholder="フォントサイズ">
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<div class="form-group">
+							<label for="exampleInputEmail1">フォントの種類(CSSショートハンド)</label>
+							<input type="text" class="form-control input" id="font" placeholder="フォントショートハンド">
+						</div>
 					</div>
 				</div>
 			</div>
