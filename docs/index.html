@@ -36,7 +36,7 @@
 			<dd><span><img src="" id="preview"></span><dd>
 			<dd><input type="file" accept="image/*" id="getfile"><dd>
 			</dl>
-			<div class="alert alert-success">Step2.(任意) 文字を入力します。</div>
+			<div class="alert alert-success">Step2.(必須) 文字を入力します。</div>
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="form-group">
@@ -44,8 +44,9 @@
 						<input type="text" class="form-control input" id="text" placeholder="文字入れ">
 					</div>
 					<div class="form-group">
-						<label for="exampleInputEmail1">文字に影を入れたい場合チェックを入れる(FF14公式風フォントの仕上がりになります)</label>
-						<input type="checkbox" class="form-control" id="color_shadow_flag" value="1" checked="checked">
+						<label for="exampleInputEmail1">文字に影を入れたい場合チェックを入れる(FF14公式風フォントの仕上がりになります)
+							<input type="checkbox" id="color_shadow_flag" value="1" checked="checked">
+						</label>
 					</div>
 					<div class="form-group">
 						<button id="setting_more_btn" class="btn btn-primary">詳細設定を開く</button>
