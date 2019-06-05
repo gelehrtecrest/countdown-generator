@@ -10,7 +10,7 @@
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<script src="main.js?20190528"></script>
+		<script src="main.js?20190606"></script>
 		<!-- Global Site Tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-101529000-4"></script>
 		<script>
@@ -55,13 +55,33 @@
 				<div id="setting_more" style="display:none">
 					<div class="col-sm-12">
 						<div class="form-group">
-							<label for="exampleInputEmail1">フォントカラー</label>
+							<label for="exampleInputEmail1">フォントカラー：ボタンから選んでください：結果はテキストボックスに入ります</label>
+							<div class="col-sm-12">
+								<div class="row">
+									<button type="button" id="color_white" class="color_button btn btn-default col-sm-1">白</button>
+									<button type="button" id="color_blue" class="color_button btn btn-info col-sm-1">青</button>
+									<button type="button" id="color_green" class="color_button btn btn-success col-sm-1">緑</button>
+									<button type="button" id="color_yellow" class="color_button btn btn-warning col-sm-1">黄</button>
+									<button type="button" id="color_red" class="color_button btn btn-danger col-sm-1">赤</button>
+								</div>
+							</div>
+							<label for="exampleInputEmail1">または、直接テキストボックスに色を入力してください</label>
 							<input type="text" class="form-control input" id="color" placeholder="フォントカラー">
 						</div>
 					</div>
 					<div class="col-sm-12">
 						<div class="form-group">
-							<label for="exampleInputEmail1">影のカラー</label>
+							<label for="exampleInputEmail1">影のカラー：ボタンから選んでください：結果はテキストボックスに入ります</label>
+							<div class="col-sm-12">
+								<div class="row">
+									<button type="button" id="color_shadow_white" class="color_shadow_button btn btn-default col-sm-1">白</button>
+									<button type="button" id="color_shadow_blue" class="color_shadow_button btn btn-info col-sm-1">青</button>
+									<button type="button" id="color_shadow_green" class="color_shadow_button btn btn-success col-sm-1">緑</button>
+									<button type="button" id="color_shadow_yellow" class="color_shadow_button btn btn-warning col-sm-1">黄</button>
+									<button type="button" id="color_shadow_red" class="color_shadow_button btn btn-danger col-sm-1">赤</button>
+								</div>
+							</div>
+							<label for="exampleInputEmail1">または、直接テキストボックスに色を入力してください</label>
 							<input type="text" class="form-control input" id="color_shadow" placeholder="影のカラー">
 						</div>
 					</div>

@@ -358,6 +358,37 @@
 				$('#setting_more_btn').text("詳細設定を閉じる");	
 			}
 		});
+		$('.color_button').click(function(e) {
+			var id = e.target.id
+			if(id == "color_white"){
+				$('#color').val("white");
+			} else if(id == "color_blue"){
+               			$('#color').val("blue");
+	         	} else if(id == "color_green"){
+ 				$('#color').val("green");
+	                } else if(id == "color_yellow"){
+ 				$('#color').val("yellow");
+	                } else if(id == "color_red"){
+ 				$('#color').val("red");
+	                }
+		});
+		$('.color_shadow_button').click(function(e) {
+			var id = e.target.id
+			if(id == "color_shadow_white"){
+				$('#color_shadow').val("white");
+			} else if(id == "color_shadow_blue"){
+               			$('#color_shadow').val("blue");
+	         	} else if(id == "color_shadow_green"){
+ 				$('#color_shadow').val("green");
+	                } else if(id == "color_shadow_yellow"){
+ 				$('#color_shadow_shadow').val("yellow");
+	                } else if(id == "color_shadow_red"){
+ 				$('#color_shadow').val("red");
+	                }
+		});
+
+
+
 	});
 
 	// URL生成
