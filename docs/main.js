@@ -38,8 +38,6 @@
 		//上下は10ピクセルごと移動
 		img.x = imageIni.xPos * 10;
 		img.y = imageIni.yPos * 10;
-		console.log(img.x);
-		console.log(img.y);
 		//拡縮は10％ずつ
 		img.scaleX = img.scaleX * (1 + imageIni.Scale / 10);
 		img.scaleY = img.scaleY * (1 + imageIni.Scale / 10);
@@ -146,56 +144,6 @@
 			});
 		});
 
-		//ボタンイベントまとめ
-		$('.btn').on('click',function(e){
-			if (e.target.id === 'update'){
-			}else if (e.target.id === 'up'){
-				imageIni.yPos -= 1;
-			}else if (e.target.id === 'down'){
-				imageIni.yPos += 1;
-			}else if (e.target.id === 'left'){
-				imageIni.xPos -= 1;
-			}else if (e.target.id === 'right') {
-				imageIni.xPos += 1;
-			}else if (e.target.id === 'zoomin') {
-				imageIni.Scale += 1;
-			}else if (e.target.id === 'zoomout') {
-				imageIni.Scale -= 1;
-			}else if (e.target.id === 'rotation_r') {
-				imageIni.rotation += 7.5;
-			}else if (e.target.id === 'rotation_l') {
-				imageIni.rotation -= 7.5;
-			}else if (e.target.id === 'alpha_up') {
-				imageIni.alpha += 0.1;
-				if(imageIni.alpha >= 0.9){
-					imageIni.alpha = 1.0;
-					$('#alpha_up').prop("disabled", true);
-				}
-				$('#alpha_down').prop("disabled", false);
-			}else if (e.target.id === 'alpha_down') {
-				imageIni.alpha -= 0.1;
-				if(imageIni.alpha <= 0.1){
-					imageIni.alpha = 0.0;
-					$('#alpha_down').prop("disabled", true);
-				}
-				$('#alpha_up').prop("disabled", false);
-			}else if (e.target.id === 'reset'){
-				imageIni.resetImage();
-			}else if (e.target.id === 'dl'){
-				return;
-			}
-
-			//画像操作時は再描画を行う
-			if(imageIni.imageData !== null){
-				imageIni.makeImage();
-			}else{
-				$('#alert').text('スクリーンショットを入力してから画像生成を行ってください');
-			}
-
-			//画面操作時はURLを再生成する
-			write_settingurl(imageIni);
-		});
-
 		$(document).on('input', '.input', function() {
 			//input操作時は再描画を行う
 			if(imageIni.imageData !== null){
@@ -207,8 +155,6 @@
 			//input操作時はURLを再生成する
 			write_settingurl(imageIni);
 		});
-
-		//ボタンイベントまとめ
 		var editgenerator_button = "";
 		var flag = 0;
 		function editgenerator(id){
@@ -347,7 +293,6 @@
 		// 詳細設定の開閉
 		var setting_more_flag = false;
 		$('#setting_more_btn').click(function () {
-			console.log(setting_more_flag);
 			if(setting_more_flag){
 				setting_more_flag = false;
 		 		$('#setting_more').hide('slow');
