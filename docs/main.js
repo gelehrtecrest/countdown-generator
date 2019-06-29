@@ -315,6 +315,8 @@
  				$('#color').val("yellow");
 	                } else if(id == "color_red"){
  				$('#color').val("red");
+	                } else if(id == "color_black"){
+ 				$('#color').val("black");
 	                }
 		});
 		$('.color_shadow_button').click(function(e) {
@@ -326,9 +328,11 @@
 	         	} else if(id == "color_shadow_green"){
  				$('#color_shadow').val("green");
 	                } else if(id == "color_shadow_yellow"){
- 				$('#color_shadow_shadow').val("yellow");
+ 				$('#color_shadow').val("yellow");
 	                } else if(id == "color_shadow_red"){
  				$('#color_shadow').val("red");
+	                } else if(id == "color_shadow_black"){
+ 				$('#color_shadow').val("black");
 	                }
 		});
 
