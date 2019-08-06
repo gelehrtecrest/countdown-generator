@@ -165,14 +165,11 @@
 		const boost_id_default = "boost";
 		var boost_id = boost_id_default;
 		function boost(id){
-			console.log(boost_id);
-			console.log(id);
-			console.log(boost_count);
 			if(boost_id === id){
 				boost_count += 1;
 			} else {
 				boost_count = 0;
-				boost_id = boost_id_default;
+				boost_id = id;
 			}
 			if(boost_count >= boost_limit){
 				return boost_value;
@@ -219,10 +216,10 @@
 				$('#alpha_up').prop("disabled", false);
 			}else if (id === 'reset'){
 				imageIni.resetImage();
+				boost(boost_id_default);
 				$('#alpha_up').prop("disabled", true);
 				$('#alpha_down').prop("disabled", false);
 			}else if (id === 'dl'){
-				boost(id)
 				return;
 			}
 
@@ -268,7 +265,6 @@
 		}).mouseover(function(){
 			pushing_flag = 0;
 			clearTimeout(mouse_push_hold);
-			boost(boost_id_default);
 		});
 
 		//スマホ用
