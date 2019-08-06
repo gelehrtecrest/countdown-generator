@@ -165,6 +165,9 @@
 		const boost_id_default = "boost";
 		var boost_id = boost_id_default;
 		function boost(id){
+			console.log(boost_id);
+			console.log(id);
+			console.log(boost_count);
 			if(boost_id === id){
 				boost_count += 1;
 			} else {
