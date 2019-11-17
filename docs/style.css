@@ -13,3 +13,7 @@ body {
 #preview {
 	width: 100%;
 }
+@font-face{
+	font-family:'Norvrandt';
+	src:url('https://gelehrtecrest.github.io/norvrandt-font/fonts/Norvrandt-Regular.woff') format('woff');
+}

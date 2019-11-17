@@ -1,8 +1,37 @@
 (function($){
+	// フォントロード
+	WebFont.load({
+		custom: {
+			families: ['Norvrandt'],
+			urls: ['style.css']
+		},
+		loading: function() {
+			console.log('loading');
+		},
+		active: function() {
+			console.log('active');
+		},
+		inactive: function() {
+			console.log('inactive');
+		},
+		fontloading: function(familyName, fvd) {
+			console.log('fontloading', familyName, fvd);
+		},
+		fontactive: function(familyName, fvd) {
+			console.log('fontactive', familyName, fvd);
+		},
+		fontinactive: function(familyName, fvd) {
+			console.log('fontinactive', familyName, fvd);
+		}
+	});
+
 	//画像関連
 	var img;
 	var img2;
 	var stage;
+
+	const font_default = "/1.5 'ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_norvrandt = "/1.5 'Norvrandt','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 
 	//画像ロード
 	function loadImage (imageData, logoImageData){
@@ -69,7 +98,7 @@
 		$('#color').val('white');
 		$('#color_shadow').val('#cb8a00');
 		$('#style').val('bold');
-		$('#font').val("/1.5 'ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif");
+		$('#font').val(font_default);
 		$('#px').val('75px');
 
 		//読込画像のオブジェクト
@@ -347,18 +376,25 @@
 			if(id == "color_shadow_white"){
 				$('#color_shadow').val("white");
 			} else if(id == "color_shadow_blue"){
-               			$('#color_shadow').val("blue");
-	         	} else if(id == "color_shadow_green"){
+               	$('#color_shadow').val("blue");
+	        } else if(id == "color_shadow_green"){
  				$('#color_shadow').val("green");
-	                } else if(id == "color_shadow_yellow"){
+	        } else if(id == "color_shadow_yellow"){
  				$('#color_shadow').val("yellow");
-	                } else if(id == "color_shadow_red"){
+	        } else if(id == "color_shadow_red"){
  				$('#color_shadow').val("red");
-	                } else if(id == "color_shadow_black"){
+	        } else if(id == "color_shadow_black"){
  				$('#color_shadow').val("black");
-	                }
+	        }
 		});
-
+		$('.font_button').click(function(e) {
+			var id = e.target.id
+			if(id == "font_default"){
+				$('#font').val(font_default);
+			} else if(id == "font_norvrandt"){
+               	$('#font').val(font_norvrandt);
+	        }
+		});
 
 
 	});

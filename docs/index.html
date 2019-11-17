@@ -11,7 +11,8 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link href="main.css" rel="stylesheet">
-		<script src="main.js?20190806"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+		<script src="main.js?20191117"></script>
 		<!-- Global Site Tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-101529000-4"></script>
 		<script>
@@ -102,7 +103,14 @@
 					</div>
 					<div class="col-sm-12">
 						<div class="form-group">
-							<label for="exampleInputEmail1">フォントの種類(CSSショートハンド)</label>
+							<label for="exampleInputEmail1">フォントの種類(CSSショートハンド)　ボタンから選んでください</label>
+							<div class="col-sm-12">
+									<div class="row">
+										<button type="button" id="font_default" class="font_button btn btn-default col-sm-2">デフォルト</button>
+										<button type="button" id="font_norvrandt" class="font_button btn btn-info col-sm-2">ノルヴラント文字フォント</button>
+									</div>
+							</div>
+							<label for="exampleInputEmail1">または、直接テキストボックスにフォントを入力してください</label>
 							<input type="text" class="form-control input" id="font" placeholder="フォントショートハンド">
 						</div>
 					</div>
