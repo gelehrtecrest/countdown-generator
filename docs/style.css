@@ -17,3 +17,7 @@ body {
 	font-family:'Norvrandt';
 	src:url('https://gelehrtecrest.github.io/norvrandt-font/fonts/Norvrandt-Regular.woff') format('woff');
 }
+@font-face{
+	font-family:'Kugane';
+	src:url('https://gelehrtecrest.github.io/kugane-font/fonts/Kugane-Regular.woff') format('woff');
+}

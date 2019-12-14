@@ -2,7 +2,7 @@
 	// フォントロード
 	WebFont.load({
 		custom: {
-			families: ['Norvrandt'],
+			families: ['Norvrandt','Kugane'],
 			urls: ['style.css']
 		},
 		loading: function() {
@@ -32,6 +32,8 @@
 
 	const font_default = "/1.5 'ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_norvrandt = "/1.5 'Norvrandt','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_kugane = "/1.5 'Kugane','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+
 
 	//画像ロード
 	function loadImage (imageData, logoImageData){
@@ -392,8 +394,10 @@
 			if(id == "font_default"){
 				$('#font').val(font_default);
 			} else if(id == "font_norvrandt"){
-               	$('#font').val(font_norvrandt);
-	        }
+		               	$('#font').val(font_norvrandt);
+			} else if(id == "font_kugane"){
+		               	$('#font').val(font_kugane);
+		        }
 		});
 
 
