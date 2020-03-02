@@ -13,6 +13,18 @@ body {
 #preview {
 	width: 100%;
 }
+
+.tab-content {
+	border-style: solid;
+	border-width: thin;
+	border-color: #ddd;
+	margin-bottom: 10px;
+}
+
+.nav-tabs{
+	border-bottom: none !important;
+}
+
 @font-face{
 	font-family:'Norvrandt';
 	src:url('https://gelehrtecrest.github.io/norvrandt-font/fonts/Norvrandt-Regular.woff') format('woff');

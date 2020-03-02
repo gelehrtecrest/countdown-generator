@@ -27,6 +27,8 @@
 
 	//画像関連
 	var img;
+	var imgB;
+	var imgC;
 	var img2;
 	var guidelineImage;
 	var stage;
@@ -64,12 +66,47 @@
 	}
 
 	//ロゴを合成する処理
-	function genImage (imageIni, imageIniGuideline, guidelineflag){
+	function genImage (imageIni, imageIniB, imageIniC, imageIniGuideline, guidelineflag){
+		//ステージ生成
+		stage.addChild(img2);
+
+		if(guidelineImage != null && guidelineflag){
+			try{
+				guidelineImage = modifyImage(guidelineImage, imageIniGuideline);
+				stage.addChild(guidelineImage);
+			} catch(e){
+				console.log(e);
+			}
+		}
+
+		try{
+			imgC = modifyFont(imgC, imageIniC, "C");
+			stage.addChild(imgC);
+		} catch(e){
+		}
+		try{
+			imgB = modifyFont(imgB, imageIniB, "B");
+			stage.addChild(imgB);
+		} catch(e){
+		}
+		try{
+			console.log("test");
+			img = modifyFont(img, imageIni, "");
+			stage.addChild(img);
+		} catch(e){
+			console.log(e);
+		}
+		
+
+		//ステージ反映
+		stage.update();
+	}
+	function modifyFont(img, imageIni, flag){
 		// 文字合成
-		var content = $('#text').val();
+		var content = $('#text'+flag).val();
 		img = new createjs.Text(content);
-		img.color = $('#color').val();
-		img.font = $('#style').val() + ' ' + $('#px').val() + $('#font').val();
+		img.color = $('#color'+flag).val();
+		img.font = $('#style'+flag).val() + ' ' + $('#px'+flag).val() + $('#font'+flag).val();
 
 		//合成画像の設定
 		//回転
@@ -89,33 +126,14 @@
 	
 		//影
 		//影をつけるかチェック
-		if($("#color_shadow_flag").prop("checked")){
+		if($("#color_shadow_flag"+flag).prop("checked")){
 			try{
-				var shadow = new createjs.Shadow($('#color_shadow').val(), 4, 4, imageIni.shadow);
+				var shadow = new createjs.Shadow($('#color_shadow'+flag).val(), 4, 4, imageIni.shadow);
 				img.shadow = shadow;
 			} catch(e){
 			}
 		}
-
-		//ステージ生成
-		stage.addChild(img2);
-
-		console.log(guidelineImage);
-		console.log(guidelineflag);
-		if(guidelineImage != null && guidelineflag){
-			try{
-				console.log("guideline");
-				guidelineImage = modifyImage(guidelineImage, imageIniGuideline);
-				stage.addChild(guidelineImage);
-			} catch(e){
-				console.log(e);
-			}
-		}
-
-		stage.addChild(img);
-
-		//ステージ反映
-		stage.update();
+		return img;
 	}
 	function modifyImage(img, imageIni){
 		$('#alert').text('合成作業開始です ステップ 1');
@@ -164,6 +182,21 @@
 		$('#style').val('bold');
 		$('#font').val(font_default);
 		$('#px').val('75px');
+
+		$('#textB').val('');
+		$('#colorB').val('white');
+		$('#color_shadowB').val('#cb8a00');
+		$('#styleB').val('bold');
+		$('#fontB').val(font_default);
+		$('#pxB').val('75px');
+
+		$('#textC').val('');
+		$('#colorC').val('white');
+		$('#color_shadowC').val('#cb8a00');
+		$('#styleC').val('bold');
+		$('#fontC').val(font_default);
+		$('#pxC').val('75px');
+
 		$('#guidelineurl').val('./guideline.svg');
 
 		//読込画像のオブジェクト
@@ -184,7 +217,49 @@
 			makeImage : function(guidelineflag){
 				if(this.imageData !== null) {
 					loadImage(this.imageData, this.logoImageData, guidelineflag);
-					genImage(this, imageIniGuideline, guidelineflag);
+					genImage(this, imageIniB, imageIniC, imageIniGuideline, guidelineflag);
+				}
+			}
+		};
+		var imageIniB = {
+			xPos : 80,
+			yPos : 20,
+			Scale : 8,
+			rotation : 0,
+			alpha : 1.0,
+			shadow : 40,
+			imageData : null,
+			logoImageData : null,
+			resetImage : function(){
+				this.xPos = 8;
+				this.yPos = 8;
+				this.Scale = 8;
+			},
+			makeImage : function(guidelineflag){
+				if(this.imageData !== null) {
+					loadImage(this.imageData, this.logoImageData, guidelineflag);
+					genImage(imageIni, this, imageIniC, imageIniGuideline, guidelineflag);
+				}
+			}
+		};
+		var imageIniC = {
+			xPos : 80,
+			yPos : 20,
+			Scale : 8,
+			rotation : 0,
+			alpha : 1.0,
+			shadow : 40,
+			imageData : null,
+			logoImageData : null,
+			resetImage : function(){
+				this.xPos = 8;
+				this.yPos = 8;
+				this.Scale = 8;
+			},
+			makeImage : function(guidelineflag){
+				if(this.imageData !== null) {
+					loadImage(this.imageData, this.logoImageData, guidelineflag);
+					genImage(imageIni, imageIniB, this, imageIniGuideline, guidelineflag);
 				}
 			}
 		};
@@ -337,6 +412,76 @@
 				boost(boost_id_default);
 				$('#alpha_up').prop("disabled", true);
 				$('#alpha_down').prop("disabled", false);
+			}else if (id === 'upB'){
+				imageIniB.yPos -= 1*boost(id);
+			}else if (id === 'downB'){
+				imageIniB.yPos += 1*boost(id);
+			}else if (id === 'leftB'){
+				imageIniB.xPos -= 1*boost(id);
+			}else if (id === 'rightB') {
+				imageIniB.xPos += 1*boost(id);
+			}else if (id === 'zoominB') {
+				imageIniB.Scale += 1*boost(id);
+			}else if (id === 'zoomoutB') {
+				imageIniB.Scale -= 1*boost(id);
+			}else if (id === 'rotation_rB') {
+				imageIniB.rotation += 7.5*boost(id);
+			}else if (id === 'rotation_lB') {
+				imageIniB.rotation -= 7.5*boost(id);
+			}else if (id === 'alpha_upB') {
+				imageIniB.alpha += 0.1*boost(id);
+				if(imageIniB.alpha >= 0.9){
+					imageIniB.alpha = 1.0;
+					$('#alpha_upB').prop("disabled", true);
+				}
+				$('#alpha_downB').prop("disabled", false);
+			}else if (id === 'alpha_downB') {
+				imageIniB.alpha -= 0.1*boost(id);
+				if(imageIniB.alpha <= 0.1){
+					imageIniB.alpha = 0.0;
+					$('#alpha_downB').prop("disabled", true);
+				}
+				$('#alpha_upB').prop("disabled", false);
+			}else if (id === 'resetB'){
+				imageIniB.resetImage();
+				boost(boost_id_default);
+				$('#alpha_upB').prop("disabled", true);
+				$('#alpha_downB').prop("disabled", false);
+			}else if (id === 'upC'){
+				imageIniC.yPos -= 1*boost(id);
+			}else if (id === 'downC'){
+				imageIniC.yPos += 1*boost(id);
+			}else if (id === 'leftC'){
+				imageIniC.xPos -= 1*boost(id);
+			}else if (id === 'rightC') {
+				imageIniC.xPos += 1*boost(id);
+			}else if (id === 'zoominC') {
+				imageIniC.Scale += 1*boost(id);
+			}else if (id === 'zoomoutC') {
+				imageIniC.Scale -= 1*boost(id);
+			}else if (id === 'rotation_rC') {
+				imageIniC.rotation += 7.5*boost(id);
+			}else if (id === 'rotation_lC') {
+				imageIniC.rotation -= 7.5*boost(id);
+			}else if (id === 'alpha_upC') {
+				imageIniC.alpha += 0.1*boost(id);
+				if(imageIniC.alpha >= 0.9){
+					imageIniC.alpha = 1.0;
+					$('#alpha_upC').prop("disabled", true);
+				}
+				$('#alpha_downC').prop("disabled", false);
+			}else if (id === 'alpha_downC') {
+				imageIniC.alpha -= 0.1*boost(id);
+				if(imageIniC.alpha <= 0.1){
+					imageIniC.alpha = 0.0;
+					$('#alpha_downC').prop("disabled", true);
+				}
+				$('#alpha_upC').prop("disabled", false);
+			}else if (id === 'resetC'){
+				imageIni.resetImage();
+				boost(boost_id_default);
+				$('#alpha_upC').prop("disabled", true);
+				$('#alpha_downC').prop("disabled", false);
 			}else if (id === 'guide'){
 				console.log("guide")
 				imageIniGuideline.alpha = 1.0;
@@ -484,22 +629,80 @@
 				$('#setting_more_btn').text("詳細設定を閉じる");	
 			}
 		});
+		var setting_more_flagB = false;
+		$('#setting_more_btnB').click(function () {
+			if(setting_more_flagB){
+				setting_more_flagB = false;
+		 		$('#setting_moreB').hide('slow');
+				$('#setting_more_btnB').text("詳細設定を開く");	
+			} else {
+				setting_more_flagB = true;
+        			$('#setting_moreB').show('slow');
+				$('#setting_more_btnB').text("詳細設定を閉じる");	
+			}
+		});
+		var setting_more_flagC = false;
+		$('#setting_more_btnC').click(function () {
+			if(setting_more_flagC){
+				setting_more_flagC = false;
+		 		$('#setting_moreC').hide('slow');
+				$('#setting_more_btnC').text("詳細設定を開く");	
+			} else {
+				setting_more_flagC = true;
+        			$('#setting_moreC').show('slow');
+				$('#setting_more_btnC').text("詳細設定を閉じる");	
+			}
+		});
+
 		$('.color_button').click(function(e) {
 			var id = e.target.id
 			if(id == "color_white"){
 				$('#color').val("white");
 			} else if(id == "color_blue"){
-               			$('#color').val("blue");
-	         	} else if(id == "color_green"){
+               	$('#color').val("blue");
+	        } else if(id == "color_green"){
  				$('#color').val("green");
-	                } else if(id == "color_yellow"){
+	        } else if(id == "color_yellow"){
  				$('#color').val("yellow");
-	                } else if(id == "color_red"){
+	        } else if(id == "color_red"){
  				$('#color').val("red");
-	                } else if(id == "color_black"){
+	        } else if(id == "color_black"){
  				$('#color').val("black");
-	                }
+	        }
 		});
+		$('.color_buttonB').click(function(e) {
+			var id = e.target.id
+			if(id == "color_whiteB"){
+				$('#colorB').val("white");
+			} else if(id == "color_blueB"){
+               	$('#colorB').val("blue");
+	        } else if(id == "color_greenB"){
+ 				$('#colorB').val("green");
+	        } else if(id == "color_yellowB"){
+ 				$('#colorB').val("yellow");
+	        } else if(id == "color_redB"){
+ 				$('#colorB').val("red");
+	        } else if(id == "color_blackB"){
+ 				$('#colorB').val("black");
+	        }
+		});
+		$('.color_buttonC').click(function(e) {
+			var id = e.target.id
+			if(id == "color_whiteC"){
+				$('#colorC').val("white");
+			} else if(id == "color_blueC"){
+               	$('#colorC').val("blue");
+	        } else if(id == "color_greenC"){
+ 				$('#colorC').val("green");
+	        } else if(id == "color_yellowC"){
+ 				$('#colorC').val("yellow");
+	        } else if(id == "color_redC"){
+ 				$('#colorC').val("red");
+	        } else if(id == "color_blackC"){
+ 				$('#colorC').val("black");
+	        }
+		});
+
 		$('.color_shadow_button').click(function(e) {
 			var id = e.target.id
 			if(id == "color_shadow_white"){
@@ -516,17 +719,74 @@
  				$('#color_shadow').val("black");
 	        }
 		});
+		$('.color_shadow_buttonB').click(function(e) {
+			var id = e.target.id
+			if(id == "color_shadow_whiteB"){
+				$('#color_shadowB').val("white");
+			} else if(id == "color_shadow_blueB"){
+               	$('#color_shadowB').val("blue");
+	        } else if(id == "color_shadow_greenB"){
+ 				$('#color_shadowB').val("green");
+	        } else if(id == "color_shadow_yellowB"){
+ 				$('#color_shadowB').val("yellow");
+	        } else if(id == "color_shadow_redB"){
+ 				$('#color_shadowB').val("red");
+	        } else if(id == "color_shadow_blackB"){
+ 				$('#color_shadowB').val("black");
+	        }
+		});
+		$('.color_shadow_buttonC').click(function(e) {
+			var id = e.target.id
+			if(id == "color_shadow_whiteC"){
+				$('#color_shadowC').val("white");
+			} else if(id == "color_shadow_blueC"){
+               	$('#color_shadowC').val("blue");
+	        } else if(id == "color_shadow_greenC"){
+ 				$('#color_shadowC').val("green");
+	        } else if(id == "color_shadow_yellowC"){
+ 				$('#color_shadowC').val("yellow");
+	        } else if(id == "color_shadow_redC"){
+ 				$('#color_shadowC').val("red");
+	        } else if(id == "color_shadow_blackC"){
+ 				$('#color_shadowC').val("black");
+	        }
+		});
+
 		$('.font_button').click(function(e) {
 			var id = e.target.id
 			if(id == "font_default"){
 				$('#font').val(font_default);
 			} else if(id == "font_norvrandt"){
-		               	$('#font').val(font_norvrandt);
+		        $('#font').val(font_norvrandt);
 			} else if(id == "font_kugane"){
-		               	$('#font').val(font_kugane);
+		        $('#font').val(font_kugane);
 			} else if(id == "font_nier"){
-		               	$('#font').val(font_nier);
-		        }
+		        $('#font').val(font_nier);
+		    }
+		});
+		$('.font_buttonB').click(function(e) {
+			var id = e.target.id
+			if(id == "font_defaultB"){
+				$('#fontB').val(font_default);
+			} else if(id == "font_norvrandtB"){
+		        $('#fontB').val(font_norvrandt);
+			} else if(id == "font_kuganeB"){
+		        $('#fontB').val(font_kugane);
+			} else if(id == "font_nierB"){
+		        $('#fontB').val(font_nier);
+		    }
+		});
+		$('.font_buttonC').click(function(e) {
+			var id = e.target.id
+			if(id == "font_defaultC"){
+				$('#fontC').val(font_default);
+			} else if(id == "font_norvrandtC"){
+		        $('#fontC').val(font_norvrandt);
+			} else if(id == "font_kuganeC"){
+		        $('#fontC').val(font_kugane);
+			} else if(id == "font_nierC"){
+		        $('#fontC').val(font_nier);
+		    }
 		});
 
 

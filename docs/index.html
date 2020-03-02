@@ -12,7 +12,7 @@
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link href="main.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-		<script src="main.js?20200302"></script>
+		<script src="main.js?20200302a"></script>
 		<!-- Global Site Tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-101529000-4"></script>
 		<script>
@@ -39,82 +39,364 @@
 			<dd><input type="file" accept="image/*" id="getfile"><dd>
 			</dl>
 			<div class="alert alert-success">Step2.(必須) 文字を入力します。</div>
-			<div class="row">
-				<div class="col-sm-12">
-					<div class="form-group">
-						<label for="exampleInputEmail1">合成したい文字</label>
-						<input type="text" class="form-control input" id="text" placeholder="文字入れ">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#tabContentA" data-toggle="tab">最前面ロゴ</a></li>
+				<li><a href="#tabContentB" data-toggle="tab">二番目ロゴ</a></li>
+				<li><a href="#tabContentC" data-toggle="tab">三番目ロゴ</a></li>
+			</ul>
+			<div class="tab-content container">
+				<div class="tab-pane active" id="tabContentA">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="exampleInputEmail1">合成したい文字</label>
+								<input type="text" class="form-control input" id="text" placeholder="文字入れ">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1">文字に影を入れたい場合チェックを入れる(FF14公式風フォントの仕上がりになります)
+									<input type="checkbox" id="color_shadow_flag" value="1" checked="checked">
+								</label>
+							</div>
+							<div class="form-group">
+								<button id="setting_more_btn" class="btn btn-primary">詳細設定を開く</button>
+							</div>
+						</div>
+						<div id="setting_more" style="display:none">
+							<div class="col-sm-12">
+								<div class="form-group">
+									<label for="exampleInputEmail1">フォントカラー：ボタンから選んでください：結果はテキストボックスに入ります</label>
+									<div class="col-sm-12">
+										<div class="row">
+											<button type="button" id="color_white" class="color_button btn btn-default col-sm-1">白</button>
+											<button type="button" id="color_blue" class="color_button btn btn-info col-sm-1">青</button>
+											<button type="button" id="color_green" class="color_button btn btn-success col-sm-1">緑</button>
+											<button type="button" id="color_yellow" class="color_button btn btn-warning col-sm-1">黄</button>
+											<button type="button" id="color_red" class="color_button btn btn-danger col-sm-1">赤</button>
+											<button type="button" id="color_black" class="color_button btn btn-black col-sm-1">黒</button>
+										</div>
+									</div>
+									<label for="exampleInputEmail1">または、直接テキストボックスに色を入力してください</label>
+									<input type="text" class="form-control input" id="color" placeholder="フォントカラー">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<label for="exampleInputEmail1">影のカラー：ボタンから選んでください：結果はテキストボックスに入ります</label>
+									<div class="col-sm-12">
+										<div class="row">
+											<button type="button" id="color_shadow_white" class="color_shadow_button btn btn-default col-sm-1">白</button>
+											<button type="button" id="color_shadow_blue" class="color_shadow_button btn btn-info col-sm-1">青</button>
+											<button type="button" id="color_shadow_green" class="color_shadow_button btn btn-success col-sm-1">緑</button>
+											<button type="button" id="color_shadow_yellow" class="color_shadow_button btn btn-warning col-sm-1">黄</button>
+											<button type="button" id="color_shadow_red" class="color_shadow_button btn btn-danger col-sm-1">赤</button>
+											<button type="button" id="color_shadow_black" class="color_shadow_button btn btn-black col-sm-1">黒</button>
+										</div>
+									</div>
+									<label for="exampleInputEmail1">または、直接テキストボックスに色を入力してください</label>
+									<input type="text" class="form-control input" id="color_shadow" placeholder="影のカラー">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<label for="exampleInputEmail1">フォントスタイル</label>
+									<input type="text" class="form-control input" id="style" placeholder="フォントスタイル">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<label for="exampleInputEmail1">フォントサイズ</label>
+									<input type="text" class="form-control input" id="px" placeholder="フォントサイズ">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<label for="exampleInputEmail1">フォントの種類(CSSショートハンド)　ボタンから選んでください</label>
+									<div class="col-sm-12">
+											<div class="row">
+												<button type="button" id="font_default" class="font_button btn btn-default col-sm-2">デフォルト</button>
+												<button type="button" id="font_kugane" class="font_button btn btn-danger col-sm-2">クガネ文字フォント</button>
+												<button type="button" id="font_norvrandt" class="font_button btn btn-info col-sm-2">ノルヴラント文字フォント</button>
+												<button type="button" id="font_nier" class="font_button btn btn-black col-sm-2">NieR文字フォント</button>
+											</div>
+									</div>
+									<label for="exampleInputEmail1">または、直接テキストボックスにフォントを入力してください</label>
+									<input type="text" class="form-control input" id="font" placeholder="フォントショートハンド">
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="form-group">
-						<label for="exampleInputEmail1">文字に影を入れたい場合チェックを入れる(FF14公式風フォントの仕上がりになります)
-							<input type="checkbox" id="color_shadow_flag" value="1" checked="checked">
-						</label>
+					<div class="">
+						<div class="alert alert-success">Step3.(必須) 合成ボタンを押すと文字が貼り付けられます。文字の位置・サイズも変更できます。</div>
 					</div>
-					<div class="form-group">
-						<button id="setting_more_btn" class="btn btn-primary">詳細設定を開く</button>
+					<div class="row">
+						<button id="update" class="col-sm-2 editgenerator btn btn-primary">
+							<div class="lang editgenerator" language="ja">合成</div>
+							<div class="lang editgenerator" language="en" style="display:none">Put</div>
+							<div class="lang editgenerator" language="ch" style="display:none">放置</div>
+							<div class="lang editgenerator" language="kr" style="display:none">넣기</div>
+						</button>
+						<button id="reset" class="col-sm-2 editgenerator btn btn-warning">
+							<div class="lang editgenerator" language="ja">リセット</div>
+							<div class="lang editgenerator" language="en" style="display:none">Reset</div>
+							<div class="lang editgenerator" language="ch" style="display:none">重启</div>
+							<div class="lang editgenerator" language="kr" style="display:none">다시 놓기</div>
+						</button>
+						<button id="left" class="col-sm-2 editgenerator btn btn-default">←</button>
+						<button id="up" class="col-sm-2 editgenerator btn btn-default">↑</button>
+						<button id="down" class="col-sm-2 editgenerator btn btn-default">↓</button>
+						<button id="right" class="col-sm-2 editgenerator btn btn-default">→</button>
+						<button id="zoomin" class="col-sm-2 editgenerator btn btn-default glyphicon glyphicon-resize-full"></button>
+						<button id="zoomout" class="col-sm-2 editgenerator btn btn-default glyphicon glyphicon-resize-small"></button>
+						<button id="rotation_l" class="col-sm-2 editgenerator btn btn-default glyphicon glyphicon-repeat" style="transform: scale(-1, 1);"></button>
+						<button id="rotation_r" class="col-sm-2 editgenerator btn btn-default glyphicon glyphicon-repeat"></button>
+						<button id="alpha_down" class="col-sm-2 editgenerator btn btn-default">
+							<div id="alpha_down" class="lang editgenerator" language="ja">薄く</div>
+							<div id="alpha_down" class="lang editgenerator" language="en" style="display:none">Thin</div>
+							<div id="alpha_down" class="lang editgenerator" language="ch" style="display:none">瘦</div>
+							<div id="alpha_down" class="lang editgenerator" language="kr" style="display:none">얇은</div>
+						</button>
+						<button id="alpha_up" disabled class="col-sm-2 editgenerator btn btn-default">
+							<div id="alpha_up" class="lang editgenerator" language="ja">濃く</div>
+							<div id="alpha_up" class="lang editgenerator" language="en" style="display:none">Dark</div>
+							<div id="alpha_up" class="lang editgenerator" language="ch" style="display:none">黑暗</div>
+							<div id="alpha_up" class="lang editgenerator" language="kr" style="display:none">진하게</div>
+						</button>
 					</div>
 				</div>
-				<div id="setting_more" style="display:none">
-					<div class="col-sm-12">
-						<div class="form-group">
-							<label for="exampleInputEmail1">フォントカラー：ボタンから選んでください：結果はテキストボックスに入ります</label>
-							<div class="col-sm-12">
-								<div class="row">
-									<button type="button" id="color_white" class="color_button btn btn-default col-sm-1">白</button>
-									<button type="button" id="color_blue" class="color_button btn btn-info col-sm-1">青</button>
-									<button type="button" id="color_green" class="color_button btn btn-success col-sm-1">緑</button>
-									<button type="button" id="color_yellow" class="color_button btn btn-warning col-sm-1">黄</button>
-									<button type="button" id="color_red" class="color_button btn btn-danger col-sm-1">赤</button>
-									<button type="button" id="color_black" class="color_button btn btn-black col-sm-1">黒</button>
-								</div>
+				<div class="tab-pane" id="tabContentB">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="exampleInputEmail1">合成したい文字</label>
+								<input type="text" class="form-control input" id="textB" placeholder="文字入れ">
 							</div>
-							<label for="exampleInputEmail1">または、直接テキストボックスに色を入力してください</label>
-							<input type="text" class="form-control input" id="color" placeholder="フォントカラー">
-						</div>
-					</div>
-					<div class="col-sm-12">
-						<div class="form-group">
-							<label for="exampleInputEmail1">影のカラー：ボタンから選んでください：結果はテキストボックスに入ります</label>
-							<div class="col-sm-12">
-								<div class="row">
-									<button type="button" id="color_shadow_white" class="color_shadow_button btn btn-default col-sm-1">白</button>
-									<button type="button" id="color_shadow_blue" class="color_shadow_button btn btn-info col-sm-1">青</button>
-									<button type="button" id="color_shadow_green" class="color_shadow_button btn btn-success col-sm-1">緑</button>
-									<button type="button" id="color_shadow_yellow" class="color_shadow_button btn btn-warning col-sm-1">黄</button>
-									<button type="button" id="color_shadow_red" class="color_shadow_button btn btn-danger col-sm-1">赤</button>
-									<button type="button" id="color_shadow_black" class="color_shadow_button btn btn-black col-sm-1">黒</button>
-								</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1">文字に影を入れたい場合チェックを入れる(FF14公式風フォントの仕上がりになります)
+									<input type="checkbox" id="color_shadow_flagB" value="1" checked="checked">
+								</label>
 							</div>
-							<label for="exampleInputEmail1">または、直接テキストボックスに色を入力してください</label>
-							<input type="text" class="form-control input" id="color_shadow" placeholder="影のカラー">
+							<div class="form-group">
+								<button id="setting_more_btnB" class="btn btn-primary">詳細設定を開く</button>
+							</div>
 						</div>
-					</div>
-					<div class="col-sm-12">
-						<div class="form-group">
-							<label for="exampleInputEmail1">フォントスタイル</label>
-							<input type="text" class="form-control input" id="style" placeholder="フォントスタイル">
-						</div>
-					</div>
-					<div class="col-sm-12">
-						<div class="form-group">
-							<label for="exampleInputEmail1">フォントサイズ</label>
-							<input type="text" class="form-control input" id="px" placeholder="フォントサイズ">
-						</div>
-					</div>
-					<div class="col-sm-12">
-						<div class="form-group">
-							<label for="exampleInputEmail1">フォントの種類(CSSショートハンド)　ボタンから選んでください</label>
+						<div id="setting_moreB" style="display:none">
 							<div class="col-sm-12">
-									<div class="row">
-										<button type="button" id="font_default" class="font_button btn btn-default col-sm-2">デフォルト</button>
-										<button type="button" id="font_kugane" class="font_button btn btn-danger col-sm-2">クガネ文字フォント</button>
-										<button type="button" id="font_norvrandt" class="font_button btn btn-info col-sm-2">ノルヴラント文字フォント</button>
-										<button type="button" id="font_nier" class="font_button btn btn-black col-sm-2">NieR文字フォント</button>
+								<div class="form-group">
+									<label for="exampleInputEmail1">フォントカラー：ボタンから選んでください：結果はテキストボックスに入ります</label>
+									<div class="col-sm-12">
+										<div class="row">
+											<button type="button" id="color_whiteB" class="color_buttonB btn btn-default col-sm-1">白</button>
+											<button type="button" id="color_blueB" class="color_buttonB btn btn-info col-sm-1">青</button>
+											<button type="button" id="color_greenB" class="color_buttonB btn btn-success col-sm-1">緑</button>
+											<button type="button" id="color_yellowB" class="color_buttonB btn btn-warning col-sm-1">黄</button>
+											<button type="button" id="color_redB" class="color_buttonB btn btn-danger col-sm-1">赤</button>
+											<button type="button" id="color_blackB" class="color_buttonB btn btn-black col-sm-1">黒</button>
+										</div>
 									</div>
+									<label for="exampleInputEmail1">または、直接テキストボックスに色を入力してください</label>
+									<input type="text" class="form-control input" id="colorB" placeholder="フォントカラー">
+								</div>
 							</div>
-							<label for="exampleInputEmail1">または、直接テキストボックスにフォントを入力してください</label>
-							<input type="text" class="form-control input" id="font" placeholder="フォントショートハンド">
+							<div class="col-sm-12">
+								<div class="form-group">
+									<label for="exampleInputEmail1">影のカラー：ボタンから選んでください：結果はテキストボックスに入ります</label>
+									<div class="col-sm-12">
+										<div class="row">
+											<button type="button" id="color_shadow_whiteB" class="color_shadow_buttonB btn btn-default col-sm-1">白</button>
+											<button type="button" id="color_shadow_blueB" class="color_shadow_buttonB btn btn-info col-sm-1">青</button>
+											<button type="button" id="color_shadow_greenB" class="color_shadow_buttonB btn btn-success col-sm-1">緑</button>
+											<button type="button" id="color_shadow_yellowB" class="color_shadow_buttonB btn btn-warning col-sm-1">黄</button>
+											<button type="button" id="color_shadow_redB" class="color_shadow_buttonB btn btn-danger col-sm-1">赤</button>
+											<button type="button" id="color_shadow_blackB" class="color_shadow_buttonB btn btn-black col-sm-1">黒</button>
+										</div>
+									</div>
+									<label for="exampleInputEmail1">または、直接テキストボックスに色を入力してください</label>
+									<input type="text" class="form-control input" id="color_shadowB" placeholder="影のカラー">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<label for="exampleInputEmail1">フォントスタイル</label>
+									<input type="text" class="form-control input" id="styleB" placeholder="フォントスタイル">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<label for="exampleInputEmail1">フォントサイズ</label>
+									<input type="text" class="form-control input" id="pxB" placeholder="フォントサイズ">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<label for="exampleInputEmail1">フォントの種類(CSSショートハンド)　ボタンから選んでください</label>
+									<div class="col-sm-12">
+											<div class="row">
+												<button type="button" id="font_defaultB" class="font_buttonB btn btn-default col-sm-2">デフォルト</button>
+												<button type="button" id="font_kuganeB" class="font_buttonB btn btn-danger col-sm-2">クガネ文字フォント</button>
+												<button type="button" id="font_norvrandtB" class="font_buttonB btn btn-info col-sm-2">ノルヴラント文字フォント</button>
+												<button type="button" id="font_nierB" class="font_buttonB btn btn-black col-sm-2">NieR文字フォント</button>
+											</div>
+									</div>
+									<label for="exampleInputEmail1">または、直接テキストボックスにフォントを入力してください</label>
+									<input type="text" class="form-control input" id="fontB" placeholder="フォントショートハンド">
+								</div>
+							</div>
 						</div>
+					</div>
+					<div class="">
+						<div class="alert alert-success">Step3.(必須) 合成ボタンを押すと文字が貼り付けられます。文字の位置・サイズも変更できます。</div>
+					</div>
+					<div class="row">
+						<button id="update" class="col-sm-2 editgenerator btn btn-primary">
+							<div class="lang editgenerator" language="ja">合成</div>
+							<div class="lang editgenerator" language="en" style="display:none">Put</div>
+							<div class="lang editgenerator" language="ch" style="display:none">放置</div>
+							<div class="lang editgenerator" language="kr" style="display:none">넣기</div>
+						</button>
+						<button id="resetB" class="col-sm-2 editgenerator btn btn-warning">
+							<div class="lang editgenerator" language="ja">リセット</div>
+							<div class="lang editgenerator" language="en" style="display:none">Reset</div>
+							<div class="lang editgenerator" language="ch" style="display:none">重启</div>
+							<div class="lang editgenerator" language="kr" style="display:none">다시 놓기</div>
+						</button>
+						<button id="leftB" class="col-sm-2 editgenerator btn btn-default">←</button>
+						<button id="upB" class="col-sm-2 editgenerator btn btn-default">↑</button>
+						<button id="downB" class="col-sm-2 editgenerator btn btn-default">↓</button>
+						<button id="rightB" class="col-sm-2 editgenerator btn btn-default">→</button>
+						<button id="zoominB" class="col-sm-2 editgenerator btn btn-default glyphicon glyphicon-resize-full"></button>
+						<button id="zoomoutB" class="col-sm-2 editgenerator btn btn-default glyphicon glyphicon-resize-small"></button>
+						<button id="rotation_lB" class="col-sm-2 editgenerator btn btn-default glyphicon glyphicon-repeat" style="transform: scale(-1, 1);"></button>
+						<button id="rotation_rB" class="col-sm-2 editgenerator btn btn-default glyphicon glyphicon-repeat"></button>
+						<button id="alpha_downB" class="col-sm-2 editgenerator btn btn-default">
+							<div id="alpha_downB" class="lang editgenerator" language="ja">薄く</div>
+							<div id="alpha_downB" class="lang editgenerator" language="en" style="display:none">Thin</div>
+							<div id="alpha_downB" class="lang editgenerator" language="ch" style="display:none">瘦</div>
+							<div id="alpha_downB" class="lang editgenerator" language="kr" style="display:none">얇은</div>
+						</button>
+						<button id="alpha_upB" disabled class="col-sm-2 editgenerator btn btn-default">
+							<div id="alpha_upB" class="lang editgenerator" language="ja">濃く</div>
+							<div id="alpha_upB" class="lang editgenerator" language="en" style="display:none">Dark</div>
+							<div id="alpha_upB" class="lang editgenerator" language="ch" style="display:none">黑暗</div>
+							<div id="alpha_upB" class="lang editgenerator" language="kr" style="display:none">진하게</div>
+						</button>
+					</div>
+				</div>
+				<div class="tab-pane" id="tabContentC">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="exampleInputEmail1">合成したい文字</label>
+								<input type="text" class="form-control input" id="textC" placeholder="文字入れ">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1">文字に影を入れたい場合チェックを入れる(FF14公式風フォントの仕上がりになります)
+									<input type="checkbox" id="color_shadow_flagC" value="1" checked="checked">
+								</label>
+							</div>
+							<div class="form-group">
+								<button id="setting_more_btnC" class="btn btn-primary">詳細設定を開く</button>
+							</div>
+						</div>
+						<div id="setting_moreC" style="display:none">
+							<div class="col-sm-12">
+								<div class="form-group">
+									<label for="exampleInputEmail1">フォントカラー：ボタンから選んでください：結果はテキストボックスに入ります</label>
+									<div class="col-sm-12">
+										<div class="row">
+											<button type="button" id="color_whiteC" class="color_buttonC btn btn-default col-sm-1">白</button>
+											<button type="button" id="color_blueC" class="color_buttonC btn btn-info col-sm-1">青</button>
+											<button type="button" id="color_greenC" class="color_buttonC btn btn-success col-sm-1">緑</button>
+											<button type="button" id="color_yellowC" class="color_buttonC btn btn-warning col-sm-1">黄</button>
+											<button type="button" id="color_redC" class="color_buttonC btn btn-danger col-sm-1">赤</button>
+											<button type="button" id="color_blackC" class="color_buttonC btn btn-black col-sm-1">黒</button>
+										</div>
+									</div>
+									<label for="exampleInputEmail1">または、直接テキストボックスに色を入力してください</label>
+									<input type="text" class="form-control input" id="colorC" placeholder="フォントカラー">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<label for="exampleInputEmail1">影のカラー：ボタンから選んでください：結果はテキストボックスに入ります</label>
+									<div class="col-sm-12">
+										<div class="row">
+											<button type="button" id="color_shadow_whiteC" class="color_shadow_buttonC btn btn-default col-sm-1">白</button>
+											<button type="button" id="color_shadow_blueC" class="color_shadow_buttonC btn btn-info col-sm-1">青</button>
+											<button type="button" id="color_shadow_greenC" class="color_shadow_buttonC btn btn-success col-sm-1">緑</button>
+											<button type="button" id="color_shadow_yellowC" class="color_shadow_buttonC btn btn-warning col-sm-1">黄</button>
+											<button type="button" id="color_shadow_redC" class="color_shadow_buttonC btn btn-danger col-sm-1">赤</button>
+											<button type="button" id="color_shadow_blackC" class="color_shadow_buttonC btn btn-black col-sm-1">黒</button>
+										</div>
+									</div>
+									<label for="exampleInputEmail1">または、直接テキストボックスに色を入力してください</label>
+									<input type="text" class="form-control input" id="color_shadowC" placeholder="影のカラー">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<label for="exampleInputEmail1">フォントスタイル</label>
+									<input type="text" class="form-control input" id="styleC" placeholder="フォントスタイル">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<label for="exampleInputEmail1">フォントサイズ</label>
+									<input type="text" class="form-control input" id="pxC" placeholder="フォントサイズ">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<label for="exampleInputEmail1">フォントの種類(CSSショートハンド)　ボタンから選んでください</label>
+									<div class="col-sm-12">
+											<div class="row">
+												<button type="button" id="font_defaultC" class="font_buttonC btn btn-default col-sm-2">デフォルト</button>
+												<button type="button" id="font_kuganeC" class="font_buttonC btn btn-danger col-sm-2">クガネ文字フォント</button>
+												<button type="button" id="font_norvrandtC" class="font_buttonC btn btn-info col-sm-2">ノルヴラント文字フォント</button>
+												<button type="button" id="font_nierC" class="font_buttonC btn btn-black col-sm-2">NieR文字フォント</button>
+											</div>
+									</div>
+									<label for="exampleInputEmail1">または、直接テキストボックスにフォントを入力してください</label>
+									<input type="text" class="form-control input" id="fontC" placeholder="フォントショートハンド">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="">
+						<div class="alert alert-success">Step3.(必須) 合成ボタンを押すと文字が貼り付けられます。文字の位置・サイズも変更できます。</div>
+					</div>
+					<div class="row">
+						<button id="update" class="col-sm-2 editgenerator btn btn-primary">
+							<div class="lang editgenerator" language="ja">合成</div>
+							<div class="lang editgenerator" language="en" style="display:none">Put</div>
+							<div class="lang editgenerator" language="ch" style="display:none">放置</div>
+							<div class="lang editgenerator" language="kr" style="display:none">넣기</div>
+						</button>
+						<button id="resetC" class="col-sm-2 editgenerator btn btn-warning">
+							<div class="lang editgenerator" language="ja">リセット</div>
+							<div class="lang editgenerator" language="en" style="display:none">Reset</div>
+							<div class="lang editgenerator" language="ch" style="display:none">重启</div>
+							<div class="lang editgenerator" language="kr" style="display:none">다시 놓기</div>
+						</button>
+						<button id="leftC" class="col-sm-2 editgenerator btn btn-default">←</button>
+						<button id="upC" class="col-sm-2 editgenerator btn btn-default">↑</button>
+						<button id="downC" class="col-sm-2 editgenerator btn btn-default">↓</button>
+						<button id="rightC" class="col-sm-2 editgenerator btn btn-default">→</button>
+						<button id="zoominC" class="col-sm-2 editgenerator btn btn-default glyphicon glyphicon-resize-full"></button>
+						<button id="zoomoutC" class="col-sm-2 editgenerator btn btn-default glyphicon glyphicon-resize-small"></button>
+						<button id="rotation_lC" class="col-sm-2 editgenerator btn btn-default glyphicon glyphicon-repeat" style="transform: scale(-1, 1);"></button>
+						<button id="rotation_rC" class="col-sm-2 editgenerator btn btn-default glyphicon glyphicon-repeat"></button>
+						<button id="alpha_downC" class="col-sm-2 editgenerator btn btn-default">
+							<div id="alpha_downC" class="lang editgenerator" language="ja">薄く</div>
+							<div id="alpha_downC" class="lang editgenerator" language="en" style="display:none">Thin</div>
+							<div id="alpha_downC" class="lang editgenerator" language="ch" style="display:none">瘦</div>
+							<div id="alpha_downC" class="lang editgenerator" language="kr" style="display:none">얇은</div>
+						</button>
+						<button id="alpha_upC" disabled class="col-sm-2 editgenerator btn btn-default">
+							<div id="alpha_upC" class="lang editgenerator" language="ja">濃く</div>
+							<div id="alpha_upC" class="lang editgenerator" language="en" style="display:none">Dark</div>
+							<div id="alpha_upC" class="lang editgenerator" language="ch" style="display:none">黑暗</div>
+							<div id="alpha_upC" class="lang editgenerator" language="kr" style="display:none">진하게</div>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -131,59 +413,6 @@
 (adsbygoogle = window.adsbygoogle || []).push({});
      </script>
      			<hr />
-			<div class="alert alert-success">Step3.(必須) 合成ボタンを押すと文字が貼り付けられます。文字の位置・サイズも変更できます。</div>
-			<div class="module">
-				<div style="display:none">
-					<img id="newImg">
-					<a href="" id="dlImg"></a>
-				</div>
-				<h5>
-					ダウンロードボタンからダウンロード可能です。
-					<button id="btnDownload" class="btn btn-primary">ダウンロード</button>
-				</h5>
-				<h5>
-					スマホなどの場合は、別ウィンドウを開いた方が保存しやすいかもしれません。
-					<button id="btnNewWindow" class="btn btn-primary">別ウィンドウを開く</button>
-				</h5>
-				<h5>もしダウンロードボタンが使えない場合は、生成結果を右クリックしてダウンロードしてください。</h5>
-				<div id="alert" class="alert alert-warning" role="alert"></div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<button id="update" class="col-sm-2 editgenerator btn btn-primary">
-						<div class="lang editgenerator" language="ja">合成</div>
-						<div class="lang editgenerator" language="en" style="display:none">Put</div>
-						<div class="lang editgenerator" language="ch" style="display:none">放置</div>
-						<div class="lang editgenerator" language="kr" style="display:none">넣기</div>
-					</button>
-					<button id="reset" class="col-sm-2 editgenerator btn btn-warning">
-						<div class="lang editgenerator" language="ja">リセット</div>
-						<div class="lang editgenerator" language="en" style="display:none">Reset</div>
-						<div class="lang editgenerator" language="ch" style="display:none">重启</div>
-						<div class="lang editgenerator" language="kr" style="display:none">다시 놓기</div>
-					</button>
-					<button id="left" class="col-sm-2 editgenerator btn btn-default">←</button>
-					<button id="up" class="col-sm-2 editgenerator btn btn-default">↑</button>
-					<button id="down" class="col-sm-2 editgenerator btn btn-default">↓</button>
-					<button id="right" class="col-sm-2 editgenerator btn btn-default">→</button>
-					<button id="zoomin" class="col-sm-2 editgenerator btn btn-default glyphicon glyphicon-resize-full"></button>
-					<button id="zoomout" class="col-sm-2 editgenerator btn btn-default glyphicon glyphicon-resize-small"></button>
-					<button id="rotation_l" class="col-sm-2 editgenerator btn btn-default glyphicon glyphicon-repeat" style="transform: scale(-1, 1);"></button>
-					<button id="rotation_r" class="col-sm-2 editgenerator btn btn-default glyphicon glyphicon-repeat"></button>
-					<button id="alpha_down" class="col-sm-2 editgenerator btn btn-default">
-						<div id="alpha_down" class="lang editgenerator" language="ja">薄く</div>
-						<div id="alpha_down" class="lang editgenerator" language="en" style="display:none">Thin</div>
-						<div id="alpha_down" class="lang editgenerator" language="ch" style="display:none">瘦</div>
-						<div id="alpha_down" class="lang editgenerator" language="kr" style="display:none">얇은</div>
-					</button>
-					<button id="alpha_up" disabled class="col-sm-2 editgenerator btn btn-default">
-						<div id="alpha_up" class="lang editgenerator" language="ja">濃く</div>
-						<div id="alpha_up" class="lang editgenerator" language="en" style="display:none">Dark</div>
-						<div id="alpha_up" class="lang editgenerator" language="ch" style="display:none">黑暗</div>
-						<div id="alpha_up" class="lang editgenerator" language="kr" style="display:none">진하게</div>
-					</button>
-				</div>
-			</div>
 			<div class="module">
 				<div class="container canvas-stage">
 					<canvas id="result" width="100%" height="100%"></canvas>
@@ -207,6 +436,22 @@
 					<button id="upsidedownG" class="col-sm-2 editgenerator btn btn-default">上下反転</button>
 					<button id="leftsiderightG" class="col-sm-2 editgenerator btn btn-default">左右反転</button>
 				</div>
+			</div>
+			<div class="module">
+				<div style="display:none">
+					<img id="newImg">
+					<a href="" id="dlImg"></a>
+				</div>
+				<h5>
+					ダウンロードボタンからダウンロード可能です。
+					<button id="btnDownload" class="btn btn-primary">ダウンロード</button>
+				</h5>
+				<h5>
+					スマホなどの場合は、別ウィンドウを開いた方が保存しやすいかもしれません。
+					<button id="btnNewWindow" class="btn btn-primary">別ウィンドウを開く</button>
+				</h5>
+				<h5>もしダウンロードボタンが使えない場合は、生成結果を右クリックしてダウンロードしてください。</h5>
+				<div id="alert" class="alert alert-warning" role="alert"></div>
 			</div>
 			<div class="settingurl">
 				<label>現在の設定情報のURL：このURLをブックマークすると、現在の設定情報を引き継げます</label>
