@@ -28,6 +28,7 @@
 	//画像関連
 	var img;
 	var img2;
+	var guidelineImage;
 	var stage;
 
 	const font_default = "/1.5 'ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
@@ -38,7 +39,7 @@
 
 
 	//画像ロード
-	function loadImage (imageData, logoImageData){
+	function loadImage (imageData, logoImageData, guidelineflag){
 		//画像のロード
 		//画像が選択されている時のみ合成
 		if(imageData !== null) {
@@ -51,11 +52,19 @@
 			});
 		}
 
+		//ガイドラインイメージ再読み込み
+		if(guidelineImage !== null){
+			console.log("再読み込み");
+			var baseImg2 = new Image();
+			baseImg2.src = $('#guidelineurl').val()
+			guidelineImage = new createjs.Bitmap(baseImg2);
+		}
+
 		stage = new createjs.Stage('result');
 	}
 
 	//ロゴを合成する処理
-	function genImage (imageIni){
+	function genImage (imageIni, imageIniGuideline, guidelineflag){
 		// 文字合成
 		var content = $('#text').val();
 		img = new createjs.Text(content);
@@ -90,10 +99,61 @@
 
 		//ステージ生成
 		stage.addChild(img2);
+
+		console.log(guidelineImage);
+		console.log(guidelineflag);
+		if(guidelineImage != null && guidelineflag){
+			try{
+				console.log("guideline");
+				guidelineImage = modifyImage(guidelineImage, imageIniGuideline);
+				stage.addChild(guidelineImage);
+			} catch(e){
+				console.log(e);
+			}
+		}
+
 		stage.addChild(img);
 
 		//ステージ反映
 		stage.update();
+	}
+	function modifyImage(img, imageIni){
+		$('#alert').text('合成作業開始です ステップ 1');
+		//合成画像の設定
+		//回転
+		img.rotation = imageIni.rotation;
+		//回転の中心は、画像の中央
+		img.regX = img.getBounds().width / 2;
+		img.regY = img.getBounds().height / 2;
+		$('#alert').text('合成作業開始です ステップ 2');
+	
+		//上下は10ピクセルごと移動
+		// 中央点からの補正
+		//拡縮に二乗で補正。縮小するときに一気に縮小しないように
+		var scale = 1 + imageIni.Scale / 50;
+		if(scale > 0 || scale <= 1){
+			scale = scale * scale;
+		} else if(scale <= 0){
+			scale = 0;
+		}
+		img.x = imageIni.xPos * 10 + img.getBounds().width / 2 * scale;
+		img.y = imageIni.yPos * 10 + img.getBounds().height / 2 * scale;
+		$('#alert').text('合成作業開始です ステップ 3');
+
+		img.scaleX = img.scaleX * scale;
+		img.scaleY = img.scaleY * scale;
+		$('#alert').text('合成作業開始です ステップ 4');
+
+
+		//透明化
+		img.alpha = imageIni.alpha;	
+		$('#alert').text('合成作業開始です ステップ 5');
+
+		//上下左右反転
+		img.scaleX = img.scaleX * imageIni.ScaleXFlag;
+		img.scaleY = img.scaleY * imageIni.ScaleYFlag;
+
+		return img;
 	}
 
 	$(function(){
@@ -104,6 +164,7 @@
 		$('#style').val('bold');
 		$('#font').val(font_default);
 		$('#px').val('75px');
+		$('#guidelineurl').val('./guideline.svg');
 
 		//読込画像のオブジェクト
 		var imageIni = {
@@ -120,12 +181,29 @@
 				this.yPos = 8;
 				this.Scale = 8;
 			},
-			makeImage : function(){
+			makeImage : function(guidelineflag){
 				if(this.imageData !== null) {
-					loadImage(this.imageData, this.logoImageData);
-					genImage(this);
+					loadImage(this.imageData, this.logoImageData, guidelineflag);
+					genImage(this, imageIniGuideline, guidelineflag);
 				}
 			}
+		};
+		var imageIniGuideline = {
+			xPos : -20,
+			yPos : -105,
+			Scale : 48,
+			rotation : 0,
+			alpha : 0.0,
+			ScaleXFlag : 1.0,
+			ScaleYFlag : 1.0,
+			imageData : null,
+			resetImage : function(){
+				this.xPos = -20;
+				this.yPos = -105;
+				this.Scale = 48;
+				this.rotation = 0;
+				this.alpha = 1.0;
+			},
 		};
 
 		//get情報
@@ -180,7 +258,7 @@
 		$(document).on('input', '.input', function() {
 			//input操作時は再描画を行う
 			if(imageIni.imageData !== null){
-				imageIni.makeImage();
+				imageIni.makeImage(true);
 			}else{
 				$('#alert').text('スクリーンショットを入力してから画像生成を行ってください');
 			}
@@ -197,6 +275,13 @@
 		var boost_count = 0;
 		const boost_id_default = "boost";
 		var boost_id = boost_id_default;
+		function is_longpress(id){
+			if(boost_id == id || pushing_flag == 0){
+				return true;
+			}
+			boost_id = id;
+			return false;
+		}
 		function boost(id){
 			if(boost_id === id){
 				boost_count += 1;
@@ -252,6 +337,42 @@
 				boost(boost_id_default);
 				$('#alpha_up').prop("disabled", true);
 				$('#alpha_down').prop("disabled", false);
+			}else if (id === 'guide'){
+				console.log("guide")
+				imageIniGuideline.alpha = 1.0;
+			}else if (id === 'unguide'){
+				imageIniGuideline.alpha = 0.0;
+			}else if (id === 'upG'){
+				imageIniGuideline.yPos -= 1*boost(id);
+			}else if (id === 'downG'){
+				imageIniGuideline.yPos += 1*boost(id);
+			}else if (id === 'leftG'){
+				imageIniGuideline.xPos -= 1*boost(id);
+			}else if (id === 'rightG') {
+				imageIniGuideline.xPos += 1*boost(id);
+			}else if (id === 'zoominG') {
+				imageIniGuideline.Scale += 1*boost(id);
+			}else if (id === 'zoomoutG') {
+				imageIniGuideline.Scale -= 1*boost(id);
+			}else if (id === 'rotation_rG') {
+				imageIniGuideline.rotation += 7.5*boost(id);
+			}else if (id === 'rotation_lG') {
+				imageIniGuideline.rotation -= 7.5*boost(id);
+			}else if (id === 'upsidedownG') {
+				//長押しで反応しないように
+				if(!is_longpress(id)){
+					imageIniGuideline.ScaleYFlag = imageIniGuideline.ScaleYFlag * (-1.0);
+					//ガイドラインの画像ずれ修正
+					if(imageIniGuideline.ScaleYFlag > 0){
+						imageIniGuideline.yPos += 5;
+					} else {
+						imageIniGuideline.yPos -= 5;
+					}
+				}
+			}else if (id === 'leftsiderightG') {
+				if(!is_longpress(id)){
+					imageIniGuideline.ScaleXFlag = imageIniGuideline.ScaleXFlag * (-1.0);
+				}
 			}else if (id === 'dl'){
 				return;
 			}
@@ -259,7 +380,7 @@
 			//画像操作時は再描画を行う
 			if(imageIni.imageData !== null){
 				$('#alert').text('合成作業開始中です。');
-				imageIni.makeImage();
+				imageIni.makeImage(true);
 				$('#alert').text('合成完了です！');
 			}else{
 				$('#alert').text('スクリーンショットを入力してから画像生成を行ってください');
@@ -319,7 +440,7 @@
 		$('input[name=logo]').click(function() {
 			//チェックボックス操作時は再描画を行う
 			if(imageIni.imageData !== null){
-				imageIni.makeImage();
+				imageIni.makeImage(true);
 			}else{
 				$('#alert').text('スクリーンショットを入力してから画像生成を行ってください');
 			}
@@ -334,6 +455,8 @@
 		//Canvas Download
 		$('#btnDownload').on("click", function() {
 			$('#alert').text('ダウンロード ボタンクリック');
+			//ガイドライン抜きの画像を生成
+			imageIni.makeImage(false);
 			//if($('input[name=logo]:checked').val() === 'local'){
 				DownloadStart();
 			//} else if($('input[name=logo]:checked').val() === 'local_white'){
@@ -344,6 +467,8 @@
 			$('#alert').text('ダウンロード処理終了');
 		});
 		$('#btnNewWindow').on("click", function() {
+			//ガイドライン抜きの画像を生成
+			imageIni.makeImage(false);
 			NewWindow();
 		});
 		// 詳細設定の開閉
@@ -405,6 +530,17 @@
 		});
 
 
+	});
+
+
+	//画像先読み込み
+	$(window).on('load',function(){
+		//ガイドラインのロード
+		var baseImg2 = new Image();
+		baseImg2.src = $('#guielineurl').val();
+		guidelineImage = new createjs.Bitmap(baseImg2);
+	
+		loadImage(null, null, null);
 	});
 
 	// URL生成
