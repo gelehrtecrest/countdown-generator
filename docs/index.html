@@ -13,6 +13,9 @@
 		<link href="main.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
 		<script src="main.js?20200312"></script>
+		<!-- ダークモード -->
+		<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+		<script src="dark-mode.js?20200327"></script>
 		<!-- Global Site Tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-101529000-4"></script>
 		<script>
@@ -27,6 +30,9 @@
 	<body>
 		<div class="jumbotron">
 			<div class="container">
+				<div class="pull-right">
+					<div class="form-control"><input id="btn-mode" type="checkbox"> ダークモード</div>
+				</div>
 				<h1>文字入れジェネレータ</h1>
 				<p id="comment">文字を合成するだけの簡易的なジェネレータです。</p>
 			</div>
