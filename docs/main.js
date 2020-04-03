@@ -39,6 +39,9 @@
 	const font_nier = "/1.5 'NieR','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_eorzea = "/1.5 'Eorzea','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 
+	const style_normal = "normal";
+	const style_bold = "bold";
+	const style_italic = "italic";
 
 
 	//画像ロード
@@ -180,21 +183,21 @@
 		$('#text').val('文字入れジェネレータ');
 		$('#color').val('white');
 		$('#color_shadow').val('#cb8a00');
-		$('#style').val('bold');
+		$('#style').val(style_bold);
 		$('#font').val(font_default);
 		$('#px').val('75px');
 
 		$('#textB').val('');
 		$('#colorB').val('white');
 		$('#color_shadowB').val('#cb8a00');
-		$('#styleB').val('bold');
+		$('#styleB').val(style_bold);
 		$('#fontB').val(font_default);
 		$('#pxB').val('75px');
 
 		$('#textC').val('');
 		$('#colorC').val('white');
 		$('#color_shadowC').val('#cb8a00');
-		$('#styleC').val('bold');
+		$('#styleC').val(style_bold);
 		$('#fontC').val(font_default);
 		$('#pxC').val('75px');
 
@@ -795,6 +798,57 @@
 		        $('#fontC').val(font_eorzea);
 		    }
 		});
+
+		// フォントのスタイル
+		$('.style_button').click(function(e) {
+			var id = e.target.id
+			if(id == "style_normal"){
+				$('#style').val(style_normal);
+			} else if(id == "style_bold"){
+				var style = $('#style').val();
+				if ( style.indexOf(style_bold) == -1) {
+					$('#style').val(style + " " + style_bold);
+				}
+	        } else if(id == "style_italic"){
+				var style = $('#style').val();
+				if ( style.indexOf(style_italic) == -1) {
+					$('#style').val(style + " " + style_italic);
+				}
+	        }
+		});
+		$('.style_buttonB').click(function(e) {
+			var id = e.target.id
+			if(id == "style_normalB"){
+				$('#styleB').val(style_normal);
+			} else if(id == "style_boldB"){
+				var style = $('#styleB').val();
+				if ( style.indexOf(style_bold) == -1) {
+					$('#styleB').val(style + " " + style_bold);
+				}
+	        } else if(id == "style_italicB"){
+				var style = $('#styleB').val();
+				if ( style.indexOf(style_italic) == -1) {
+					$('#styleB').val(style + " " + style_italic);
+				}
+	        }
+		});
+		$('.style_buttonC').click(function(e) {
+			var id = e.target.id
+			if(id == "style_normalC"){
+				$('#styleC').val(style_normal);
+			} else if(id == "style_boldC"){
+				var style = $('#styleC').val();
+				if ( style.indexOf(style_bold) == -1) {
+					$('#styleC').val(style + " " + style_bold);
+				}
+	        } else if(id == "style_italicC"){
+				var style = $('#styleC').val();
+				if ( style.indexOf(style_italic) == -1) {
+					$('#styleC').val(style + " " + style_italic);
+				}
+	        }
+		});
+
 
 
 	});
