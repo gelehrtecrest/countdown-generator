@@ -34,6 +34,10 @@ body {
 	src:url('https://gelehrtecrest.github.io/kugane-font/fonts/Kugane-Regular.woff') format('woff');
 }
 @font-face{
+	font-family:'@Kugane';
+	src:url('https://gelehrtecrest.github.io/kugane-font/fonts/@Kugane-Regular.woff') format('woff');
+}
+@font-face{
 	font-family:'NieR';
 	src:url('https://gelehrtecrest.github.io/nier-font/fonts/NieR-Regular.woff') format('woff');
 }

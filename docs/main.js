@@ -2,7 +2,7 @@
 	// フォントロード
 	WebFont.load({
 		custom: {
-			families: ['Norvrandt','Kugane','NieR','Eorzea', 'Allagan'],
+			families: ['Norvrandt','Kugane', '@Kugane','NieR','Eorzea', 'Allagan'],
 			urls: ['style.css']
 		},
 		loading: function() {
