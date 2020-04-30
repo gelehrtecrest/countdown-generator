@@ -36,6 +36,7 @@
 	const font_default = "/1.5 'ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_norvrandt = "/1.5 'Norvrandt','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_kugane = "/1.5 'Kugane','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_kugane_tate = "/1.5 '@Kugane','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_nier = "/1.5 'NieR','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_eorzea = "/1.5 'Eorzea','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 
@@ -764,6 +765,8 @@
 		        $('#font').val(font_norvrandt);
 			} else if(id == "font_kugane"){
 		        $('#font').val(font_kugane);
+			} else if(id == "font_kugane_tate"){
+		        $('#font').val(font_kugane_tate);
 			} else if(id == "font_nier"){
 		        $('#font').val(font_nier);
 		    } else if(id == "font_eorzea"){
@@ -778,6 +781,8 @@
 		        $('#fontB').val(font_norvrandt);
 			} else if(id == "font_kuganeB"){
 		        $('#fontB').val(font_kugane);
+			} else if(id == "font_kugane_tateB"){
+		        $('#fontB').val(font_kugane_tate);
 			} else if(id == "font_nierB"){
 		        $('#fontB').val(font_nier);
 		    } else if(id == "font_eorzeaB"){
@@ -792,6 +797,8 @@
 		        $('#fontC').val(font_norvrandt);
 			} else if(id == "font_kuganeC"){
 		        $('#fontC').val(font_kugane);
+			} else if(id == "font_kugane_tateC"){
+		        $('#fontC').val(font_kugane_tate);
 			} else if(id == "font_nierC"){
 		        $('#fontC').val(font_nier);
 		    } else if(id == "font_eorzeaC"){
