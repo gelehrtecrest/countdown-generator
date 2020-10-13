@@ -2,7 +2,7 @@
 	// フォントロード
 	WebFont.load({
 		custom: {
-			families: ['Norvrandt','Kugane', '@Kugane','NieR','Eorzea', 'Allagan'],
+			families: ['Norvrandt','Kugane', '@Kugane','NieR','Eorzea', 'Allagan', 'Near-Eastern'],
 			urls: ['style.css']
 		},
 		loading: function() {
@@ -39,6 +39,7 @@
 	const font_kugane_tate = "/1.5 '@Kugane','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_nier = "/1.5 'NieR','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_eorzea = "/1.5 'Eorzea','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_near_eastern = "/1.5 'Near-Eastern','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 
 	const style_normal = "normal";
 	const style_bold = "bold";
@@ -762,48 +763,54 @@
 			if(id == "font_default"){
 				$('#font').val(font_default);
 			} else if(id == "font_norvrandt"){
-		        $('#font').val(font_norvrandt);
+				$('#font').val(font_norvrandt);
 			} else if(id == "font_kugane"){
-		        $('#font').val(font_kugane);
+		        	$('#font').val(font_kugane);
 			} else if(id == "font_kugane_tate"){
-		        $('#font').val(font_kugane_tate);
+		        	$('#font').val(font_kugane_tate);
 			} else if(id == "font_nier"){
-		        $('#font').val(font_nier);
-		    } else if(id == "font_eorzea"){
-		        $('#font').val(font_eorzea);
-		    }
+		        	$('#font').val(font_nier);
+		    	} else if(id == "font_eorzea"){
+		        	$('#font').val(font_eorzea);
+		    	} else if(id == "font_near_eastern"){
+				$('#font').val(font_near_eastern);
+			}
 		});
 		$('.font_buttonB').click(function(e) {
 			var id = e.target.id
 			if(id == "font_defaultB"){
 				$('#fontB').val(font_default);
 			} else if(id == "font_norvrandtB"){
-		        $('#fontB').val(font_norvrandt);
+		        	$('#fontB').val(font_norvrandt);
 			} else if(id == "font_kuganeB"){
-		        $('#fontB').val(font_kugane);
+		        	$('#fontB').val(font_kugane);
 			} else if(id == "font_kugane_tateB"){
-		        $('#fontB').val(font_kugane_tate);
+		        	$('#fontB').val(font_kugane_tate);
 			} else if(id == "font_nierB"){
-		        $('#fontB').val(font_nier);
-		    } else if(id == "font_eorzeaB"){
-		        $('#fontB').val(font_eorzea);
-		    }
+		        	$('#fontB').val(font_nier);
+		    	} else if(id == "font_eorzeaB"){
+		        	$('#fontB').val(font_eorzea);
+		        } else if(id == "font_near_easternB"){
+				$('#fontB').val(font_near_eastern);
+			}
 		});
 		$('.font_buttonC').click(function(e) {
 			var id = e.target.id
 			if(id == "font_defaultC"){
 				$('#fontC').val(font_default);
 			} else if(id == "font_norvrandtC"){
-		        $('#fontC').val(font_norvrandt);
+		        	$('#fontC').val(font_norvrandt);
 			} else if(id == "font_kuganeC"){
-		        $('#fontC').val(font_kugane);
+		        	$('#fontC').val(font_kugane);
 			} else if(id == "font_kugane_tateC"){
-		        $('#fontC').val(font_kugane_tate);
+		        	$('#fontC').val(font_kugane_tate);
 			} else if(id == "font_nierC"){
-		        $('#fontC').val(font_nier);
-		    } else if(id == "font_eorzeaC"){
-		        $('#fontC').val(font_eorzea);
-		    }
+		        	$('#fontC').val(font_nier);
+		        } else if(id == "font_eorzeaC"){
+		        	$('#fontC').val(font_eorzea);
+		        } else if(id == "font_near_easternC"){
+				$('#fontC').val(font_near_eastern);
+			}
 		});
 
 		// フォントのスタイル

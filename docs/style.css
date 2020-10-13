@@ -49,6 +49,11 @@ body {
         font-family:'Allagan';
         src:url('https://gelehrtecrest.github.io/allagan-font/fonts/Allagan-Regular.woff') format('woff');
 }
+@font-face{
+        font-family:'Near-Eastern';
+        src:url('https://gelehrtecrest.github.io/near-eastern-font/fonts/Near-Eastern-Regular.woff') format('woff');
+}
+
 
 /* ダークモード */
 .dark-theme {
