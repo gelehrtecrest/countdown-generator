@@ -766,8 +766,10 @@
 				$('#font').val(font_norvrandt);
 			} else if(id == "font_kugane"){
 		        	$('#font').val(font_kugane);
+				$('#style').val(style_normal);
 			} else if(id == "font_kugane_tate"){
 		        	$('#font').val(font_kugane_tate);
+				$('#style').val("");
 			} else if(id == "font_nier"){
 		        	$('#font').val(font_nier);
 		    	} else if(id == "font_eorzea"){
@@ -784,8 +786,10 @@
 		        	$('#fontB').val(font_norvrandt);
 			} else if(id == "font_kuganeB"){
 		        	$('#fontB').val(font_kugane);
+				$('#styleB').val(style_normal);
 			} else if(id == "font_kugane_tateB"){
 		        	$('#fontB').val(font_kugane_tate);
+				$('#styleB').val("");
 			} else if(id == "font_nierB"){
 		        	$('#fontB').val(font_nier);
 		    	} else if(id == "font_eorzeaB"){
@@ -802,8 +806,10 @@
 		        	$('#fontC').val(font_norvrandt);
 			} else if(id == "font_kuganeC"){
 		        	$('#fontC').val(font_kugane);
+				$('#styleC').val(style_normal);
 			} else if(id == "font_kugane_tateC"){
 		        	$('#fontC').val(font_kugane_tate);
+				$('#styleC').val("");
 			} else if(id == "font_nierC"){
 		        	$('#fontC').val(font_nier);
 		        } else if(id == "font_eorzeaC"){
