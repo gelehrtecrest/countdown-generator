@@ -53,6 +53,11 @@ body {
         font-family:'Near-Eastern';
         src:url('https://gelehrtecrest.github.io/near-eastern-font/fonts/Near-Eastern-Regular.woff') format('woff');
 }
+@font-face{
+        font-family:'FF14Figure';
+        src:url('https://gelehrtecrest.github.io/near-eastern-font/fonts/FF14Figure-Regular.woff') format('woff');
+}
+
 
 
 /* ダークモード */

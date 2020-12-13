@@ -2,7 +2,7 @@
 	// フォントロード
 	WebFont.load({
 		custom: {
-			families: ['Norvrandt','Kugane', '@Kugane','NieR','Eorzea', 'Allagan', 'Near-Eastern'],
+			families: ['Norvrandt','Kugane', '@Kugane','NieR','Eorzea', 'Allagan', 'Near-Eastern', 'FF14Figure'],
 			urls: ['style.css']
 		},
 		loading: function() {
@@ -40,6 +40,7 @@
 	const font_nier = "/1.5 'NieR','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_eorzea = "/1.5 'Eorzea','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_near_eastern = "/1.5 'Near-Eastern','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_ff14_figure = "/1.5 'FF14Figure','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 
 	const style_normal = "normal";
 	const style_bold = "bold";
@@ -776,6 +777,8 @@
 		        	$('#font').val(font_eorzea);
 		    	} else if(id == "font_near_eastern"){
 				$('#font').val(font_near_eastern);
+		    	} else if(id == "font_ff14_figure"){
+				$('#font').val(font_ff14_figure);
 			}
 		});
 		$('.font_buttonB').click(function(e) {
@@ -796,6 +799,8 @@
 		        	$('#fontB').val(font_eorzea);
 		        } else if(id == "font_near_easternB"){
 				$('#fontB').val(font_near_eastern);
+		        } else if(id == "font_ff14_figureB"){
+				$('#fontB').val(font_ff14_figure);
 			}
 		});
 		$('.font_buttonC').click(function(e) {
@@ -816,6 +821,8 @@
 		        	$('#fontC').val(font_eorzea);
 		        } else if(id == "font_near_easternC"){
 				$('#fontC').val(font_near_eastern);
+		        } else if(id == "font_ff14_figureC"){
+				$('#fontC').val(font_ff14_figure);
 			}
 		});
 
