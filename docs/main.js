@@ -140,6 +140,13 @@
 			} catch(e){
 			}
 		}
+
+		// 縁取り
+		// 縁取りで描くかチェック
+		if($("#color_outline_flag"+flag).prop("checked")){
+			img.outline = 1;
+		}
+
 		return img;
 	}
 	function modifyImage(img, imageIni){
