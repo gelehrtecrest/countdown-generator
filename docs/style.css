@@ -57,6 +57,11 @@ body {
         font-family:'Eden';
         src:url('https://gelehrtecrest.github.io/eden-font/fonts/Eden-Regular.woff') format('woff');
 }
+@font-face{
+        font-family:'Eorzea-Blackletter';
+        src:url('https://gelehrtecrest.github.io/eorzea-blackletter-font/fonts/Eorzea-Blackletter-Regular.woff') format('woff');
+}
+
 
 
 
