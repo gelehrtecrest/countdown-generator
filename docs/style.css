@@ -61,7 +61,10 @@ body {
         font-family:'Eorzea-Blackletter';
         src:url('https://gelehrtecrest.github.io/eorzea-blackletter-font/fonts/Eorzea-Blackletter-Regular.woff') format('woff');
 }
-
+@font-face {
+	font-family:"MyFont";
+	src:url("https://fonts.gstatic.com/s/raleway/v18/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CFPrcVIT9d0c-dYA.woff") format("woff");
+}
 
 
 
