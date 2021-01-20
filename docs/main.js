@@ -2,7 +2,7 @@
 	// フォントロード
 	WebFont.load({
 		custom: {
-			families: ['Norvrandt','Kugane', '@Kugane','NieR','Eorzea', 'Allagan', 'Near-Eastern', 'Eden', 'Eorzea-Blackletter','TrainOne','Stick','RocknRollOne','ReggaeOne','RampartOne','KleeOne','KleeOne-SemiBold','DotGothic16'],
+			families: ['Norvrandt','Kugane', '@Kugane','NieR','Eorzea', 'Allagan', 'Near-Eastern', 'Eden', 'Eorzea-Blackletter','TrainOne','Stick','RocknRollOne','Reggae','RampartOne','KleeOne','KleeOne-SemiBold','DotGothic16'],
 			urls: ['style.css']
 		},
 		loading: function() {
@@ -47,7 +47,7 @@
 	const font_trainone = "/1.5 'TrainOne','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_stick = "/1.5 'Stick','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_rokenrollone = "/1.5 'RocknRollOne','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
-	const font_reggae = "/1.5 'ReggaeOne','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_reggae = "/1.5 'Reggae','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_rampartone = "/1.5 'RampartOne','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_kleeone = "/1.5 'KleeOne','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_kleeonesemibold = "/1.5 'KleeOne-SemiBold','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
