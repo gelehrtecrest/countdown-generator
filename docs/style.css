@@ -69,6 +69,11 @@ body {
 	font-family:"TrainOne";
 	src:url("https://gelehrtecrest.github.io/countdown-generator/fontworks/TrainOne-Regular.ttf") format("truetype");
 }
+@font-face {
+	font-family:"Stick";
+	src:url("https://github.com/fontworks-fonts/Stick/blob/master/fonts/ttf/Stick-Regular.ttf?raw=true") format("truetype");
+}
+
 
 
 
