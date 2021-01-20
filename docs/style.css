@@ -67,7 +67,7 @@ body {
 }
 @font-face {
 	font-family:"TrainOne";
-	src:url("https://gelehrtecrest.github.io/countdown-generator/fontworks/TrainOne-Regular.ttf") format("ttf");
+	src:url("https://gelehrtecrest.github.io/countdown-generator/fontworks/TrainOne-Regular.ttf") format("truetype");
 }
 
 
