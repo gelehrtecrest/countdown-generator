@@ -47,7 +47,7 @@
 	const font_trainone = "/1.5 'TrainOne','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_stick = "/1.5 'Stick','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_rokenrollone = "/1.5 'RocknRollOne','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
-	const font_reggae = "/1.5 'Reggae','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_reggae = "/1.5 'ReggaeOne','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_rampartone = "/1.5 'RampartOne','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_kleeone = "/1.5 'KleeOne','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_kleeonesemibold = "/1.5 'KleeOne-SemiBold','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
@@ -813,8 +813,8 @@
 				$('#font').val(font_kleeone);
 				} else if(id == "font_kleeonesemibold"){
 				$('#font').val(font_kleeonesemibold);
-				} else if(id == "font_dotgoshic16"){
-				$('#font').val(font_dotgoshic16);
+				} else if(id == "font_dotgothic16"){
+				$('#font').val(font_dotgothic16);
 			}
 		});
 
@@ -855,8 +855,8 @@
 				$('#fontB').val(font_kleeone);
 				} else if(id == "font_kleeonesemiboldB"){
 				$('#fontB').val(font_kleeonesemibold);
-				} else if(id == "font_dotgoshic16B"){
-				$('#fontB').val(font_dotgoshic16);
+				} else if(id == "font_dotgothic16B"){
+				$('#fontB').val(font_dotgothic16);
 			}
 		});
 		$('.font_buttonC').click(function(e) {
@@ -895,8 +895,8 @@
 				$('#fontC').val(font_kleeone);
 				} else if(id == "font_kleeonesemiboldC"){
 				$('#fontC').val(font_kleeonesemibold);
-				} else if(id == "font_dotgoshic16C"){
-				$('#fontC').val(font_dotgoshic16);
+				} else if(id == "font_dotgothic16C"){
+				$('#fontC').val(font_dotgothic16);
 			}
 		});
 
