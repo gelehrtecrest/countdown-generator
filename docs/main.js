@@ -2,7 +2,7 @@
 	// フォントロード
 	WebFont.load({
 		custom: {
-			families: ['Norvrandt','Kugane', '@Kugane','NieR','Eorzea', 'Allagan', 'Near-Eastern', 'Eden', 'Eorzea-Blackletter','MyFont','TrainOne','Stick'],
+			families: ['Norvrandt','Kugane', '@Kugane','NieR','Eorzea', 'Allagan', 'Near-Eastern', 'Eden', 'Eorzea-Blackletter','TrainOne','Stick','RocknRollOne','Reggae','RampartOne','KleeOne','KleeOne-SemiBold','DotGothic16'],
 			urls: ['style.css']
 		},
 		loading: function() {
@@ -24,13 +24,6 @@
 			console.log('fontinactive', familyName, fvd);
 		}
 	});
-	function myfont(){
-		WebFont.load({
-			custom: {
-				families: ['My Font']
-			}
-		});
-	}
 
 	//画像関連
 	var img;
@@ -40,7 +33,7 @@
 	var guidelineImage;
 	var stage;
 
-	const font_default = "/1.5 'MyFont','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_default = "/1.5 'ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_norvrandt = "/1.5 'Norvrandt','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_kugane = "/1.5 'Kugane','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_kugane_tate = "/1.5 '@Kugane','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
@@ -50,6 +43,15 @@
 	const font_ff14_figure = "/1.5 'Eden','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_eorzea_blackletter = "/1.5 'Eorzea-Blackletter','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 
+	// fontworks様のフォント
+	const font_trainone = "/1.5 'TrainOne','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_stick = "/1.5 'Stick','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_rokenrollone = "/1.5 'RocknRollOne','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_reggae = "/1.5 'Reggae','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_rampartone = "/1.5 'RampartOne','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_kleeone = "/1.5 'KleeOne','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_kleeonesemibold = "/1.5 'KleeOne-SemiBold','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_dotgothic16 = "/1.5 'DotGothic16','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 
 	const style_normal = "normal";
 	const style_bold = "bold";
@@ -648,7 +650,7 @@
 				$('#setting_more_btn').text("詳細設定を開く");	
 			} else {
 				setting_more_flag = true;
-        			$('#setting_more').show('slow');
+					$('#setting_more').show('slow');
 				$('#setting_more_btn').text("詳細設定を閉じる");	
 			}
 		});
@@ -660,7 +662,7 @@
 				$('#setting_more_btnB').text("詳細設定を開く");	
 			} else {
 				setting_more_flagB = true;
-        			$('#setting_moreB').show('slow');
+					$('#setting_moreB').show('slow');
 				$('#setting_more_btnB').text("詳細設定を閉じる");	
 			}
 		});
@@ -672,7 +674,7 @@
 				$('#setting_more_btnC').text("詳細設定を開く");	
 			} else {
 				setting_more_flagC = true;
-        			$('#setting_moreC').show('slow');
+					$('#setting_moreC').show('slow');
 				$('#setting_more_btnC').text("詳細設定を閉じる");	
 			}
 		});
@@ -682,48 +684,48 @@
 			if(id == "color_white"){
 				$('#color').val("white");
 			} else if(id == "color_blue"){
-               	$('#color').val("blue");
-	        } else if(id == "color_green"){
+				$('#color').val("blue");
+			} else if(id == "color_green"){
  				$('#color').val("green");
-	        } else if(id == "color_yellow"){
+			} else if(id == "color_yellow"){
  				$('#color').val("yellow");
-	        } else if(id == "color_red"){
+			} else if(id == "color_red"){
  				$('#color').val("red");
-	        } else if(id == "color_black"){
+			} else if(id == "color_black"){
  				$('#color').val("black");
-	        }
+			}
 		});
 		$('.color_buttonB').click(function(e) {
 			var id = e.target.id
 			if(id == "color_whiteB"){
 				$('#colorB').val("white");
 			} else if(id == "color_blueB"){
-               	$('#colorB').val("blue");
-	        } else if(id == "color_greenB"){
+				$('#colorB').val("blue");
+			} else if(id == "color_greenB"){
  				$('#colorB').val("green");
-	        } else if(id == "color_yellowB"){
+			} else if(id == "color_yellowB"){
  				$('#colorB').val("yellow");
-	        } else if(id == "color_redB"){
+			} else if(id == "color_redB"){
  				$('#colorB').val("red");
-	        } else if(id == "color_blackB"){
+			} else if(id == "color_blackB"){
  				$('#colorB').val("black");
-	        }
+			}
 		});
 		$('.color_buttonC').click(function(e) {
 			var id = e.target.id
 			if(id == "color_whiteC"){
 				$('#colorC').val("white");
 			} else if(id == "color_blueC"){
-               	$('#colorC').val("blue");
-	        } else if(id == "color_greenC"){
+				$('#colorC').val("blue");
+			} else if(id == "color_greenC"){
  				$('#colorC').val("green");
-	        } else if(id == "color_yellowC"){
+			} else if(id == "color_yellowC"){
  				$('#colorC').val("yellow");
-	        } else if(id == "color_redC"){
+			} else if(id == "color_redC"){
  				$('#colorC').val("red");
-	        } else if(id == "color_blackC"){
+			} else if(id == "color_blackC"){
  				$('#colorC').val("black");
-	        }
+			}
 		});
 
 		$('.color_shadow_button').click(function(e) {
@@ -731,48 +733,48 @@
 			if(id == "color_shadow_white"){
 				$('#color_shadow').val("white");
 			} else if(id == "color_shadow_blue"){
-               	$('#color_shadow').val("blue");
-	        } else if(id == "color_shadow_green"){
+				$('#color_shadow').val("blue");
+			} else if(id == "color_shadow_green"){
  				$('#color_shadow').val("green");
-	        } else if(id == "color_shadow_yellow"){
+			} else if(id == "color_shadow_yellow"){
  				$('#color_shadow').val("yellow");
-	        } else if(id == "color_shadow_red"){
+			} else if(id == "color_shadow_red"){
  				$('#color_shadow').val("red");
-	        } else if(id == "color_shadow_black"){
+			} else if(id == "color_shadow_black"){
  				$('#color_shadow').val("black");
-	        }
+			}
 		});
 		$('.color_shadow_buttonB').click(function(e) {
 			var id = e.target.id
 			if(id == "color_shadow_whiteB"){
 				$('#color_shadowB').val("white");
 			} else if(id == "color_shadow_blueB"){
-               	$('#color_shadowB').val("blue");
-	        } else if(id == "color_shadow_greenB"){
+				$('#color_shadowB').val("blue");
+			} else if(id == "color_shadow_greenB"){
  				$('#color_shadowB').val("green");
-	        } else if(id == "color_shadow_yellowB"){
+			} else if(id == "color_shadow_yellowB"){
  				$('#color_shadowB').val("yellow");
-	        } else if(id == "color_shadow_redB"){
+			} else if(id == "color_shadow_redB"){
  				$('#color_shadowB').val("red");
-	        } else if(id == "color_shadow_blackB"){
+			} else if(id == "color_shadow_blackB"){
  				$('#color_shadowB').val("black");
-	        }
+			}
 		});
 		$('.color_shadow_buttonC').click(function(e) {
 			var id = e.target.id
 			if(id == "color_shadow_whiteC"){
 				$('#color_shadowC').val("white");
 			} else if(id == "color_shadow_blueC"){
-               	$('#color_shadowC').val("blue");
-	        } else if(id == "color_shadow_greenC"){
+				$('#color_shadowC').val("blue");
+			} else if(id == "color_shadow_greenC"){
  				$('#color_shadowC').val("green");
-	        } else if(id == "color_shadow_yellowC"){
+			} else if(id == "color_shadow_yellowC"){
  				$('#color_shadowC').val("yellow");
-	        } else if(id == "color_shadow_redC"){
+			} else if(id == "color_shadow_redC"){
  				$('#color_shadowC').val("red");
-	        } else if(id == "color_shadow_blackC"){
+			} else if(id == "color_shadow_blackC"){
  				$('#color_shadowC').val("black");
-	        }
+			}
 		});
 
 		$('.font_button').click(function(e) {
@@ -782,45 +784,79 @@
 			} else if(id == "font_norvrandt"){
 				$('#font').val(font_norvrandt);
 			} else if(id == "font_kugane"){
-		        	$('#font').val(font_kugane);
+					$('#font').val(font_kugane);
 				$('#style').val(style_normal);
 			} else if(id == "font_kugane_tate"){
-		        	$('#font').val(font_kugane_tate);
+					$('#font').val(font_kugane_tate);
 				$('#style').val("");
 			} else if(id == "font_nier"){
-		        	$('#font').val(font_nier);
-		    	} else if(id == "font_eorzea"){
-		        	$('#font').val(font_eorzea);
-		    	} else if(id == "font_near_eastern"){
+					$('#font').val(font_nier);
+				} else if(id == "font_eorzea"){
+					$('#font').val(font_eorzea);
+				} else if(id == "font_near_eastern"){
 				$('#font').val(font_near_eastern);
-		    	} else if(id == "font_ff14_figure"){
+				} else if(id == "font_ff14_figure"){
 				$('#font').val(font_ff14_figure);
-		    	} else if(id == "font_eorzea_blackletter"){
+				} else if(id == "font_eorzea_blackletter"){
 				$('#font').val(font_eorzea_blackletter);
+				} else if(id == "font_trainone"){
+				$('#font').val(font_trainone);
+				} else if(id == "font_stick"){
+				$('#font').val(font_stick);
+				} else if(id == "font_rokenrollone"){
+				$('#font').val(font_rokenrollone);
+				} else if(id == "font_reggae"){
+				$('#font').val(font_reggae);
+				} else if(id == "font_rampartone"){
+				$('#font').val(font_rampartone);
+				} else if(id == "font_kleeone"){
+				$('#font').val(font_kleeone);
+				} else if(id == "font_kleeonesemibold"){
+				$('#font').val(font_kleeonesemibold);
+				} else if(id == "font_dotgoshic16"){
+				$('#font').val(font_dotgoshic16);
 			}
 		});
+
+
 		$('.font_buttonB').click(function(e) {
 			var id = e.target.id
 			if(id == "font_defaultB"){
 				$('#fontB').val(font_default);
 			} else if(id == "font_norvrandtB"){
-		        	$('#fontB').val(font_norvrandt);
+					$('#fontB').val(font_norvrandt);
 			} else if(id == "font_kuganeB"){
-		        	$('#fontB').val(font_kugane);
+					$('#fontB').val(font_kugane);
 				$('#styleB').val(style_normal);
 			} else if(id == "font_kugane_tateB"){
-		        	$('#fontB').val(font_kugane_tate);
+					$('#fontB').val(font_kugane_tate);
 				$('#styleB').val("");
 			} else if(id == "font_nierB"){
-		        	$('#fontB').val(font_nier);
-		    	} else if(id == "font_eorzeaB"){
-		        	$('#fontB').val(font_eorzea);
-		        } else if(id == "font_near_easternB"){
+					$('#fontB').val(font_nier);
+				} else if(id == "font_eorzeaB"){
+					$('#fontB').val(font_eorzea);
+				} else if(id == "font_near_easternB"){
 				$('#fontB').val(font_near_eastern);
-		        } else if(id == "font_ff14_figureB"){
+				} else if(id == "font_ff14_figureB"){
 				$('#fontB').val(font_ff14_figure);
-		    	} else if(id == "font_eorzea_blackletterB"){
+				} else if(id == "font_eorzea_blackletterB"){
 				$('#fontB').val(font_eorzea_blackletter);
+				} else if(id == "font_trainoneB"){
+				$('#fontB').val(font_trainone);
+				} else if(id == "font_stickB"){
+				$('#fontB').val(font_stick);
+				} else if(id == "font_rokenrolloneB"){
+				$('#fontB').val(font_rokenrollone);
+				} else if(id == "font_reggaeB"){
+				$('#fontB').val(font_reggae);
+				} else if(id == "font_rampartoneB"){
+				$('#fontB').val(font_rampartone);
+				} else if(id == "font_kleeoneB"){
+				$('#fontB').val(font_kleeone);
+				} else if(id == "font_kleeonesemiboldB"){
+				$('#fontB').val(font_kleeonesemibold);
+				} else if(id == "font_dotgoshic16B"){
+				$('#fontB').val(font_dotgoshic16);
 			}
 		});
 		$('.font_buttonC').click(function(e) {
@@ -828,23 +864,39 @@
 			if(id == "font_defaultC"){
 				$('#fontC').val(font_default);
 			} else if(id == "font_norvrandtC"){
-		        	$('#fontC').val(font_norvrandt);
+					$('#fontC').val(font_norvrandt);
 			} else if(id == "font_kuganeC"){
-		        	$('#fontC').val(font_kugane);
+					$('#fontC').val(font_kugane);
 				$('#styleC').val(style_normal);
 			} else if(id == "font_kugane_tateC"){
-		        	$('#fontC').val(font_kugane_tate);
+					$('#fontC').val(font_kugane_tate);
 				$('#styleC').val("");
 			} else if(id == "font_nierC"){
-		        	$('#fontC').val(font_nier);
-		        } else if(id == "font_eorzeaC"){
-		        	$('#fontC').val(font_eorzea);
-		        } else if(id == "font_near_easternC"){
+					$('#fontC').val(font_nier);
+				} else if(id == "font_eorzeaC"){
+					$('#fontC').val(font_eorzea);
+				} else if(id == "font_near_easternC"){
 				$('#fontC').val(font_near_eastern);
-		        } else if(id == "font_ff14_figureC"){
+				} else if(id == "font_ff14_figureC"){
 				$('#fontC').val(font_ff14_figure);
-		    	} else if(id == "font_eorzea_blackletterC"){
+				} else if(id == "font_eorzea_blackletterC"){
 				$('#fontC').val(font_eorzea_blackletter);
+				} else if(id == "font_trainoneC"){
+				$('#fontC').val(font_trainone);
+				} else if(id == "font_stickC"){
+				$('#fontC').val(font_stick);
+				} else if(id == "font_rokenrolloneC"){
+				$('#fontC').val(font_rokenrollone);
+				} else if(id == "font_reggaeC"){
+				$('#fontC').val(font_reggae);
+				} else if(id == "font_rampartoneC"){
+				$('#fontC').val(font_rampartone);
+				} else if(id == "font_kleeoneC"){
+				$('#fontC').val(font_kleeone);
+				} else if(id == "font_kleeonesemiboldC"){
+				$('#fontC').val(font_kleeonesemibold);
+				} else if(id == "font_dotgoshic16C"){
+				$('#fontC').val(font_dotgoshic16);
 			}
 		});
 
@@ -858,12 +910,12 @@
 				if ( style.indexOf(style_bold) == -1) {
 					$('#style').val(style + " " + style_bold);
 				}
-	        } else if(id == "style_italic"){
+			} else if(id == "style_italic"){
 				var style = $('#style').val();
 				if ( style.indexOf(style_italic) == -1) {
 					$('#style').val(style + " " + style_italic);
 				}
-	        }
+			}
 		});
 		$('.style_buttonB').click(function(e) {
 			var id = e.target.id
@@ -874,12 +926,12 @@
 				if ( style.indexOf(style_bold) == -1) {
 					$('#styleB').val(style + " " + style_bold);
 				}
-	        } else if(id == "style_italicB"){
+			} else if(id == "style_italicB"){
 				var style = $('#styleB').val();
 				if ( style.indexOf(style_italic) == -1) {
 					$('#styleB').val(style + " " + style_italic);
 				}
-	        }
+			}
 		});
 		$('.style_buttonC').click(function(e) {
 			var id = e.target.id
@@ -890,12 +942,12 @@
 				if ( style.indexOf(style_bold) == -1) {
 					$('#styleC').val(style + " " + style_bold);
 				}
-	        } else if(id == "style_italicC"){
+			} else if(id == "style_italicC"){
 				var style = $('#styleC').val();
 				if ( style.indexOf(style_italic) == -1) {
 					$('#styleC').val(style + " " + style_italic);
 				}
-	        }
+			}
 		});
 
 

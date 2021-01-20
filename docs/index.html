@@ -12,7 +12,7 @@
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link href="main.css?20201213" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-		<script src="main.js?20201213"></script>
+		<script src="main.js?20210121"></script>
 		<!-- ダークモード -->
 		<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 		<script src="dark-mode.js?20200327"></script>
@@ -143,6 +143,7 @@
 							<div class="col-sm-12">
 								<div class="form-group">
 									<label for="exampleInputEmail1">フォントの種類(CSSショートハンド)　ボタンから選んでください</label>
+									<label for="exampleInputEmail1">デフォルト及びFF14の二次創作フォント</label>
 									<div class="col-sm-12">
 											<div class="row">
 												<button type="button" id="font_default" class="font_button btn btn-default col-sm-2">デフォルト</button>
@@ -154,6 +155,19 @@
 												<button type="button" id="font_near_eastern" class="font_button btn btn-default col-sm-2">近東文字フォント</button>
 												<button type="button" id="font_ff14_figure" class="font_button btn btn-success col-sm-2">エデンフォント</button>
 												<button type="button" id="font_eorzea_blackletter" class="font_button btn btn-danger col-sm-2">ブラックレターエオルゼア</button>
+											</div>
+									</div>
+									<label for="exampleInputEmail1">fontworks様のフォント(詳しくは<a href="https://github.com/fontworks-fonts" target="_blank">こちら</a>)</label>
+									<div class="col-sm-12">
+											<div class="row">
+												<button type="button" id="font_trainone" class="font_button btn btn-default col-sm-3">TrainOne</button>
+												<button type="button" id="font_stick" class="font_button btn btn-default col-sm-3">Stick</button>
+												<button type="button" id="font_rokenrollone" class="font_button btn btn-default col-sm-3">RokkenRolleOne</button>
+												<button type="button" id="font_reggae" class="font_button btn btn-default col-sm-3">Reggae</button>
+												<button type="button" id="font_rampartone" class="font_button btn btn-default col-sm-3">RampartOne</button>
+												<button type="button" id="font_kleeone" class="font_button btn btn-default col-sm-3">KleeOne</button>
+												<button type="button" id="font_kleeonesemibold" class="font_button btn btn-default col-sm-3">KleeOne-SemiBold</button>
+												<button type="button" id="font_dotgothic16" class="font_button btn btn-default col-sm-3">Dotgoshic16</button>
 											</div>
 									</div>
 									<label for="exampleInputEmail1">または、直接テキストボックスにフォントを入力してください</label>
@@ -279,6 +293,7 @@
 							<div class="col-sm-12">
 								<div class="form-group">
 									<label for="exampleInputEmail1">フォントの種類(CSSショートハンド)　ボタンから選んでください</label>
+									<label for="exampleInputEmail1">デフォルト及びFF14の二次創作フォント</label>
 									<div class="col-sm-12">
 											<div class="row">
 												<button type="button" id="font_defaultB" class="font_buttonB btn btn-default col-sm-2">デフォルト</button>
@@ -290,6 +305,19 @@
 												<button type="button" id="font_near_easternB" class="font_buttonB btn btn-default col-sm-2">近東文字フォント</button>
 												<button type="button" id="font_ff14_figureB" class="font_buttonB btn btn-success col-sm-2">エデンフォント</button>
 												<button type="button" id="font_eorzea_blackletterB" class="font_buttonB btn btn-danger col-sm-2">ブラックレターエオルゼア</button>
+											</div>
+									</div>
+									<label for="exampleInputEmail1">fontworks様のフォント(詳しくは<a href="https://github.com/fontworks-fonts" target="_blank">こちら</a>)</label>
+									<div class="col-sm-12">
+											<div class="row">
+												<button type="button" id="font_trainoneB" class="font_buttonB btn btn-default col-sm-3">TrainOne</button>
+												<button type="button" id="font_stickB" class="font_buttonB btn btn-default col-sm-3">Stick</button>
+												<button type="button" id="font_rokenrolloneB" class="font_buttonB btn btn-default col-sm-3">RokkenRolleOne</button>
+												<button type="button" id="font_reggaeB" class="font_buttonB btn btn-default col-sm-3">Reggae</button>
+												<button type="button" id="font_rampartoneB" class="font_buttonB btn btn-default col-sm-3">RampartOne</button>
+												<button type="button" id="font_kleeoneB" class="font_buttonB btn btn-default col-sm-3">KleeOne</button>
+												<button type="button" id="font_kleeonesemiboldB" class="font_buttonB btn btn-default col-sm-3">KleeOne-SemiBold</button>
+												<button type="button" id="font_dotgothic16B" class="font_buttonB btn btn-default col-sm-3">Dotgoshic16</button>
 											</div>
 									</div>
 									<label for="exampleInputEmail1">または、直接テキストボックスにフォントを入力してください</label>
@@ -415,6 +443,7 @@
 							<div class="col-sm-12">
 								<div class="form-group">
 									<label for="exampleInputEmail1">フォントの種類(CSSショートハンド)　ボタンから選んでください</label>
+									<label for="exampleInputEmail1">デフォルト及びFF14の二次創作フォント</label>
 									<div class="col-sm-12">
 											<div class="row">
 												<button type="button" id="font_defaultC" class="font_buttonC btn btn-default col-sm-2">デフォルト</button>
@@ -426,6 +455,19 @@
 												<button type="button" id="font_near_easternC" class="font_buttonC btn btn-default col-sm-2">近東文字フォント</button>
 												<button type="button" id="font_ff14_figureC" class="font_buttonC btn btn-success col-sm-2">エデンフォント</button>
 												<button type="button" id="font_eorzea_blackletterC" class="font_buttonC btn btn-danger col-sm-2">ブラックレターエオルゼア</button>
+											</div>
+									</div>
+									<label for="exampleInputEmail1">fontworks様のフォント(詳しくは<a href="https://github.com/fontworks-fonts" target="_blank">こちら</a>)</label>
+									<div class="col-sm-12">
+											<div class="row">
+												<button type="button" id="font_trainoneC" class="font_buttonC btn btn-default col-sm-3">TrainOne</button>
+												<button type="button" id="font_stickC" class="font_buttonC btn btn-default col-sm-3">Stick</button>
+												<button type="button" id="font_rokenrolloneC" class="font_buttonC btn btn-default col-sm-3">RokkenRolleOne</button>
+												<button type="button" id="font_reggaeC" class="font_buttonC btn btn-default col-sm-3">Reggae</button>
+												<button type="button" id="font_rampartoneC" class="font_buttonC btn btn-default col-sm-3">RampartOne</button>
+												<button type="button" id="font_kleeoneC" class="font_buttonC btn btn-default col-sm-3">KleeOne</button>
+												<button type="button" id="font_kleeonesemiboldC" class="font_buttonC btn btn-default col-sm-3">KleeOne-SemiBold</button>
+												<button type="button" id="font_dotgothic16C" class="font_buttonC btn btn-default col-sm-3">Dotgoshic16</button>
 											</div>
 									</div>
 									<label for="exampleInputEmail1">または、直接テキストボックスにフォントを入力してください</label>

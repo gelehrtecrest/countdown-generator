@@ -62,17 +62,43 @@ body {
         src:url('https://gelehrtecrest.github.io/eorzea-blackletter-font/fonts/Eorzea-Blackletter-Regular.woff') format('woff');
 }
 @font-face {
-	font-family:"MyFont";
-	src:url("https://fonts.gstatic.com/s/raleway/v18/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CFPrcVIT9d0c-dYA.woff") format("woff");
-}
-@font-face {
 	font-family:"TrainOne";
 	src:url("https://gelehrtecrest.github.io/countdown-generator/fontworks/TrainOne-Regular.ttf") format("truetype");
 }
 @font-face {
 	font-family:"Stick";
-	src:url("https://github.com/fontworks-fonts/Stick/blob/master/fonts/ttf/Stick-Regular.ttf?raw=true") format("truetype");
+	src:url("https://gelehrtecrest.github.io/countdown-generator/fontworks/Stick-Regular.ttf") format("truetype");
 }
+@font-face {
+	font-family:"RocknRollOne";
+	src:url("https://gelehrtecrest.github.io/countdown-generator/fontworks/RocknRollOne-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family:"Reggae";
+	src:url("https://gelehrtecrest.github.io/countdown-generator/fontworks/Reggae-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family:"RampartOne";
+	src:url("https://gelehrtecrest.github.io/countdown-generator/fontworks/RampartOne-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family:"KleeOne";
+	src:url("https://gelehrtecrest.github.io/countdown-generator/fontworks/KleeOne-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family:"KleeOne-SemiBold";
+	src:url("https://gelehrtecrest.github.io/countdown-generator/fontworks/KleeOne-SemiBold.ttf") format("truetype");
+}
+@font-face {
+	font-family:"DotGothic16";
+	src:url("https://gelehrtecrest.github.io/countdown-generator/fontworks/DotGothic16-Regular.ttf") format("truetype");
+}
+
+
+
+
+
+
 
 
 
