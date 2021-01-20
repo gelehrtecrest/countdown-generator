@@ -19,6 +19,9 @@
 ## Licence
 GNU GENERAL PUBLIC LICENSE
 
+SIL Open Font License (OFL)
+
+
 ## Author
 <https://twitter.com/gelehrte_crest>
 <ein.gelehrte@gmail.com>
