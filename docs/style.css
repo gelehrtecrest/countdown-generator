@@ -65,6 +65,11 @@ body {
 	font-family:"MyFont";
 	src:url("https://fonts.gstatic.com/s/raleway/v18/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CFPrcVIT9d0c-dYA.woff") format("woff");
 }
+@font-face {
+	font-family:"TrainOne";
+	src:url("https://github.com/fontworks-fonts/Train/blob/master/fonts/ttf/TrainOne-Regular.ttf?raw=true") format("ttf");
+}
+
 
 
 
