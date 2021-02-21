@@ -2,7 +2,7 @@
 	// フォントロード
 	WebFont.load({
 		custom: {
-			families: ['Norvrandt','Kugane', '@Kugane','NieR','Eorzea', 'Allagan', 'Near-Eastern', 'Eden', 'Eorzea-Blackletter','TrainOne','Stick','RocknRollOne','ReggaeOne','RampartOne','KleeOne','KleeOne-SemiBold','DotGothic16'],
+			families: ['Norvrandt','Kugane', '@Kugane','NieR','Eorzea', 'Allagan', 'Near-Eastern', 'Eden', 'Eorzea-Blackletter','TrainOne','Stick','RocknRollOne','ReggaeOne','RampartOne','KleeOne','KleeOne-SemiBold','DotGothic16','EorzeaDot'],
 			urls: ['style.css']
 		},
 		loading: function() {
