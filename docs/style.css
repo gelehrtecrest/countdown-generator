@@ -97,6 +97,11 @@ body {
         font-family:'EorzeaDot';
         src:url('https://gelehrtecrest.github.io/eorzea-dot-font/fonts/EorzeaDot-Regular.woff') format('woff');
 }
+@font-face{
+        font-family:'KuganeDot';
+        src:url('https://gelehrtecrest.github.io/kugane-dot-font/fonts/KuganeDot-Regular.woff') format('woff');
+}
+
 
 
 
