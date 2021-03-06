@@ -42,6 +42,9 @@
 	const font_near_eastern = "/1.5 'Near-Eastern','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_ff14_figure = "/1.5 'Eden','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_eorzea_blackletter = "/1.5 'Eorzea-Blackletter','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_eorzea_dot = "/1.5 'EorzeaDot','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_kugane_dot = "/1.5 'KuganeDot','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_norvrandt_dot = "/1.5 'NorvrandtDot','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 
 	// fontworks様のフォント
 	const font_trainone = "/1.5 'TrainOne','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
@@ -790,30 +793,36 @@
 					$('#font').val(font_kugane_tate);
 				$('#style').val("");
 			} else if(id == "font_nier"){
-					$('#font').val(font_nier);
-				} else if(id == "font_eorzea"){
-					$('#font').val(font_eorzea);
-				} else if(id == "font_near_eastern"){
+				$('#font').val(font_nier);
+			} else if(id == "font_eorzea"){
+				$('#font').val(font_eorzea);
+			} else if(id == "font_near_eastern"){
 				$('#font').val(font_near_eastern);
-				} else if(id == "font_ff14_figure"){
+			} else if(id == "font_ff14_figure"){
 				$('#font').val(font_ff14_figure);
-				} else if(id == "font_eorzea_blackletter"){
+			} else if(id == "font_eorzea_blackletter"){
 				$('#font').val(font_eorzea_blackletter);
-				} else if(id == "font_trainone"){
+			} else if(id == "font_eorzea_dot"){
+				$('#font').val(font_eorzea_dot);
+			} else if(id == "font_kugane_dot"){
+				$('#font').val(font_kugane_dot);
+			} else if(id == "font_norvrandt_dot"){
+				$('#font').val(font_norvrandt_dot);
+			} else if(id == "font_trainone"){
 				$('#font').val(font_trainone);
-				} else if(id == "font_stick"){
+			} else if(id == "font_stick"){
 				$('#font').val(font_stick);
-				} else if(id == "font_rokenrollone"){
+			} else if(id == "font_rokenrollone"){
 				$('#font').val(font_rokenrollone);
-				} else if(id == "font_reggaeone"){
+			} else if(id == "font_reggaeone"){
 				$('#font').val(font_reggaeone);
-				} else if(id == "font_rampartone"){
+			} else if(id == "font_rampartone"){
 				$('#font').val(font_rampartone);
-				} else if(id == "font_kleeone"){
+			} else if(id == "font_kleeone"){
 				$('#font').val(font_kleeone);
-				} else if(id == "font_kleeonesemibold"){
+			} else if(id == "font_kleeonesemibold"){
 				$('#font').val(font_kleeonesemibold);
-				} else if(id == "font_dotgothic16"){
+			} else if(id == "font_dotgothic16"){
 				$('#font').val(font_dotgothic16);
 			}
 		});
@@ -832,30 +841,36 @@
 					$('#fontB').val(font_kugane_tate);
 				$('#styleB').val("");
 			} else if(id == "font_nierB"){
-					$('#fontB').val(font_nier);
-				} else if(id == "font_eorzeaB"){
-					$('#fontB').val(font_eorzea);
-				} else if(id == "font_near_easternB"){
+				$('#fontB').val(font_nier);
+			} else if(id == "font_eorzeaB"){
+				$('#fontB').val(font_eorzea);
+			} else if(id == "font_near_easternB"){
 				$('#fontB').val(font_near_eastern);
-				} else if(id == "font_ff14_figureB"){
+			} else if(id == "font_ff14_figureB"){
 				$('#fontB').val(font_ff14_figure);
-				} else if(id == "font_eorzea_blackletterB"){
+			} else if(id == "font_eorzea_blackletterB"){
 				$('#fontB').val(font_eorzea_blackletter);
-				} else if(id == "font_trainoneB"){
+			} else if(id == "font_eorzea_dotB"){
+				$('#fontB').val(font_eorzea_dot);
+			} else if(id == "font_kugane_dotB"){
+				$('#fontB').val(font_kugane_dot);
+			} else if(id == "font_norvrandt_dotB"){
+				$('#fontB').val(font_norvrandt_dot);
+			} else if(id == "font_trainoneB"){
 				$('#fontB').val(font_trainone);
-				} else if(id == "font_stickB"){
+			} else if(id == "font_stickB"){
 				$('#fontB').val(font_stick);
-				} else if(id == "font_rokenrolloneB"){
+			} else if(id == "font_rokenrolloneB"){
 				$('#fontB').val(font_rokenrollone);
-				} else if(id == "font_reggaeoneB"){
+			} else if(id == "font_reggaeoneB"){
 				$('#fontB').val(font_reggaeone);
-				} else if(id == "font_rampartoneB"){
+			} else if(id == "font_rampartoneB"){
 				$('#fontB').val(font_rampartone);
-				} else if(id == "font_kleeoneB"){
+			} else if(id == "font_kleeoneB"){
 				$('#fontB').val(font_kleeone);
-				} else if(id == "font_kleeonesemiboldB"){
+			} else if(id == "font_kleeonesemiboldB"){
 				$('#fontB').val(font_kleeonesemibold);
-				} else if(id == "font_dotgothic16B"){
+			} else if(id == "font_dotgothic16B"){
 				$('#fontB').val(font_dotgothic16);
 			}
 		});
@@ -872,30 +887,36 @@
 					$('#fontC').val(font_kugane_tate);
 				$('#styleC').val("");
 			} else if(id == "font_nierC"){
-					$('#fontC').val(font_nier);
-				} else if(id == "font_eorzeaC"){
-					$('#fontC').val(font_eorzea);
-				} else if(id == "font_near_easternC"){
-				$('#fontC').val(font_near_eastern);
-				} else if(id == "font_ff14_figureC"){
-				$('#fontC').val(font_ff14_figure);
-				} else if(id == "font_eorzea_blackletterC"){
+				$('#fontC').val(font_nier);
+			} else if(id == "font_eorzeaC"){
+				$('#fontC').val(font_eorzea);
+			} else if(id == "font_near_easternC"){
+			$('#fontC').val(font_near_eastern);
+			} else if(id == "font_ff14_figureC"){
+			$('#fontC').val(font_ff14_figure);
+			} else if(id == "font_eorzea_blackletterC"){
 				$('#fontC').val(font_eorzea_blackletter);
-				} else if(id == "font_trainoneC"){
+			} else if(id == "font_eorzea_dotC"){
+				$('#fontC').val(font_eorzea_dot);
+			} else if(id == "font_kugane_dotC"){
+				$('#fontC').val(font_kugane_dot);
+			} else if(id == "font_norvrandt_dotC"){
+				$('#fontC').val(font_norvrandt_dot);
+			} else if(id == "font_trainoneC"){
 				$('#fontC').val(font_trainone);
-				} else if(id == "font_stickC"){
+			} else if(id == "font_stickC"){
 				$('#fontC').val(font_stick);
-				} else if(id == "font_rokenrolloneC"){
+			} else if(id == "font_rokenrolloneC"){
 				$('#fontC').val(font_rokenrollone);
-				} else if(id == "font_reggaeoneC"){
+			} else if(id == "font_reggaeoneC"){
 				$('#fontC').val(font_reggaeone);
-				} else if(id == "font_rampartoneC"){
+			} else if(id == "font_rampartoneC"){
 				$('#fontC').val(font_rampartone);
-				} else if(id == "font_kleeoneC"){
+			} else if(id == "font_kleeoneC"){
 				$('#fontC').val(font_kleeone);
-				} else if(id == "font_kleeonesemiboldC"){
+			} else if(id == "font_kleeonesemiboldC"){
 				$('#fontC').val(font_kleeonesemibold);
-				} else if(id == "font_dotgothic16C"){
+			} else if(id == "font_dotgothic16C"){
 				$('#fontC').val(font_dotgothic16);
 			}
 		});
