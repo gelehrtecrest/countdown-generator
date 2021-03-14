@@ -59,7 +59,7 @@ body {
 }
 @font-face{
         font-family:'Eorzea-Blackletter';
-        src:url('https://gelehrtecrest.github.io/eorzea-blackletter-font/fonts/Eorzea-Blackletter-Regular.woff') format('woff');
+        src:url('https://gelehrtecrest.github.io/countdown-generator/gelefont/Eorzea-Blackletter-Regular.woff') format('woff');
 }
 @font-face {
 	font-family:"TrainOne";
@@ -95,11 +95,11 @@ body {
 }
 @font-face{
         font-family:'EorzeaDot';
-        src:url('https://gelehrtecrest.github.io/eorzea-dot-font/fonts/EorzeaDot-Regular.woff') format('woff');
+        src:url('https://gelehrtecrest.github.io/countdown-generator/gelefont/EorzeaDot-Regular.woff') format('woff');
 }
 @font-face{
         font-family:'KuganeDot';
-        src:url('https://gelehrtecrest.github.io/kugane-dot-font/fonts/KuganeDot-Regular.woff') format('woff');
+        src:url('https://gelehrtecrest.github.io/countdown-generator/gelefont/KuganeDot-Regular.woff') format('woff');
 }
 
 
