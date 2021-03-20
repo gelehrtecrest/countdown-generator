@@ -101,6 +101,11 @@ body {
         font-family:'KuganeDot';
         src:url('https://gelehrtecrest.github.io/countdown-generator/gelefont/KuganeDot-Regular.woff') format('woff');
 }
+@font-face{
+        font-family:'NorvrandtDot';
+        src:url('https://gelehrtecrest.github.io/countdown-generator/gelefont/NorvrandtDot-Regular.woff') format('woff');
+}
+
 
 
 
