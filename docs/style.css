@@ -105,6 +105,11 @@ body {
         font-family:'NorvrandtDot';
         src:url('https://gelehrtecrest.github.io/countdown-generator/gelefont/NorvrandtDot-Regular.woff') format('woff');
 }
+@font-face{
+        font-family:'EorzeaCursive';
+        src:url('https://gelehrtecrest.github.io/countdown-generator/gelefont/EorzeaCursive-Regular.woff') format('woff');
+}
+
 
 
 
