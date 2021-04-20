@@ -2,7 +2,7 @@
 	// フォントロード
 	WebFont.load({
 		custom: {
-			families: ['Norvrandt','Kugane', '@Kugane','NieR','Eorzea', 'Allagan', 'Near-Eastern', 'Eden', 'Eorzea-Blackletter','TrainOne','Stick','RocknRollOne','ReggaeOne','RampartOne','KleeOne','KleeOne-SemiBold','DotGothic16','EorzeaDot','KuganeDot','NorvrandtDot','EorzeaCursive'],
+			families: ['Norvrandt','Norvrandt5','Kugane', '@Kugane','NieR','Eorzea', 'Allagan', 'Near-Eastern', 'Eden', 'Eorzea-Blackletter','TrainOne','Stick','RocknRollOne','ReggaeOne','RampartOne','KleeOne','KleeOne-SemiBold','DotGothic16','EorzeaDot','KuganeDot','NorvrandtDot','NorvrandtDot5','EorzeaCursive'],
 			urls: ['style.css']
 		},
 		loading: function() {
@@ -35,6 +35,7 @@
 
 	const font_default = "/1.5 'ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_norvrandt = "/1.5 'Norvrandt','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_norvrandt5 = "/1.5 'Norvrandt5','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_kugane = "/1.5 'Kugane','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_kugane_tate = "/1.5 '@Kugane','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_nier = "/1.5 'NieR','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
@@ -45,6 +46,7 @@
 	const font_eorzea_dot = "/1.5 'EorzeaDot','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_kugane_dot = "/1.5 'KuganeDot','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_norvrandt_dot = "/1.5 'NorvrandtDot','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_norvrandt5_dot = "/1.5 'NorvrandtDot5','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 
 	// fontworks様のフォント
 	const font_trainone = "/1.5 'TrainOne','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
@@ -786,11 +788,13 @@
 				$('#font').val(font_default);
 			} else if(id == "font_norvrandt"){
 				$('#font').val(font_norvrandt);
+			} else if(id == "font_norvrandt5"){
+				$('#font').val(font_norvrandt5);
 			} else if(id == "font_kugane"){
-					$('#font').val(font_kugane);
+				$('#font').val(font_kugane);
 				$('#style').val(style_normal);
 			} else if(id == "font_kugane_tate"){
-					$('#font').val(font_kugane_tate);
+				$('#font').val(font_kugane_tate);
 				$('#style').val("");
 			} else if(id == "font_nier"){
 				$('#font').val(font_nier);
@@ -808,6 +812,8 @@
 				$('#font').val(font_kugane_dot);
 			} else if(id == "font_norvrandt_dot"){
 				$('#font').val(font_norvrandt_dot);
+			} else if(id == "font_norvrandt5_dot"){
+				$('#font').val(font_norvrandt5_dot);
 			} else if(id == "font_trainone"){
 				$('#font').val(font_trainone);
 			} else if(id == "font_stick"){
@@ -833,12 +839,14 @@
 			if(id == "font_defaultB"){
 				$('#fontB').val(font_default);
 			} else if(id == "font_norvrandtB"){
-					$('#fontB').val(font_norvrandt);
+				$('#fontB').val(font_norvrandt);
+			} else if(id == "font_norvrandt5B"){
+				$('#fontB').val(font_norvrandt5);
 			} else if(id == "font_kuganeB"){
-					$('#fontB').val(font_kugane);
+				$('#fontB').val(font_kugane);
 				$('#styleB').val(style_normal);
 			} else if(id == "font_kugane_tateB"){
-					$('#fontB').val(font_kugane_tate);
+				$('#fontB').val(font_kugane_tate);
 				$('#styleB').val("");
 			} else if(id == "font_nierB"){
 				$('#fontB').val(font_nier);
@@ -856,6 +864,8 @@
 				$('#fontB').val(font_kugane_dot);
 			} else if(id == "font_norvrandt_dotB"){
 				$('#fontB').val(font_norvrandt_dot);
+			} else if(id == "font_norvrandt5_dotB"){
+				$('#fontB').val(font_norvrandt5_dot);
 			} else if(id == "font_trainoneB"){
 				$('#fontB').val(font_trainone);
 			} else if(id == "font_stickB"){
@@ -879,12 +889,14 @@
 			if(id == "font_defaultC"){
 				$('#fontC').val(font_default);
 			} else if(id == "font_norvrandtC"){
-					$('#fontC').val(font_norvrandt);
+				$('#fontC').val(font_norvrandt);
+			} else if(id == "font_norvrandt5C"){
+				$('#fontC').val(font_norvrandt5);
 			} else if(id == "font_kuganeC"){
-					$('#fontC').val(font_kugane);
+				$('#fontC').val(font_kugane);
 				$('#styleC').val(style_normal);
 			} else if(id == "font_kugane_tateC"){
-					$('#fontC').val(font_kugane_tate);
+				$('#fontC').val(font_kugane_tate);
 				$('#styleC').val("");
 			} else if(id == "font_nierC"){
 				$('#fontC').val(font_nier);
@@ -902,6 +914,8 @@
 				$('#fontC').val(font_kugane_dot);
 			} else if(id == "font_norvrandt_dotC"){
 				$('#fontC').val(font_norvrandt_dot);
+			} else if(id == "font_norvrandt5_dotC"){
+				$('#fontC').val(font_norvrandt5_dot);
 			} else if(id == "font_trainoneC"){
 				$('#fontC').val(font_trainone);
 			} else if(id == "font_stickC"){

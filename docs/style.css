@@ -30,6 +30,10 @@ body {
 	src:url('https://gelehrtecrest.github.io/norvrandt-font/fonts/Norvrandt-Regular.woff') format('woff');
 }
 @font-face{
+	font-family:'Norvrandt5';
+	src:url('https://gelehrtecrest.github.io/norvrandt-font/fonts/for_patch_5.0/Norvrandt-Regular.woff') format('woff');
+}
+@font-face{
 	font-family:'Kugane';
 	src:url('https://gelehrtecrest.github.io/kugane-font/fonts/Kugane-Regular.woff') format('woff');
 }
@@ -104,6 +108,10 @@ body {
 @font-face{
         font-family:'NorvrandtDot';
         src:url('https://gelehrtecrest.github.io/countdown-generator/gelefont/NorvrandtDot-Regular.woff') format('woff');
+}
+@font-face{
+        font-family:'NorvrandtDot5';
+        src:url('https://gelehrtecrest.github.io/countdown-generator/gelefont/for_patch5.0/NorvrandtDot-Regular.woff') format('woff');
 }
 @font-face{
         font-family:'EorzeaCursive';
