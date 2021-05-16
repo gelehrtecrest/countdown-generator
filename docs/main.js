@@ -44,6 +44,7 @@
 	const font_ff14_figure = "/1.5 'Eden','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_eorzea_blackletter = "/1.5 'Eorzea-Blackletter','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_eorzea_dot = "/1.5 'EorzeaDot','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_eorzea_cursive = "/1.5 'EorzeaCursive','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_kugane_dot = "/1.5 'KuganeDot','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_norvrandt_dot = "/1.5 'NorvrandtDot','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_norvrandt5_dot = "/1.5 'NorvrandtDot5','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
@@ -808,6 +809,8 @@
 				$('#font').val(font_eorzea_blackletter);
 			} else if(id == "font_eorzea_dot"){
 				$('#font').val(font_eorzea_dot);
+			} else if(id == "font_eorzea_cursive"){
+				$('#font').val(font_eorzea_cursive);
 			} else if(id == "font_kugane_dot"){
 				$('#font').val(font_kugane_dot);
 			} else if(id == "font_norvrandt_dot"){
@@ -860,6 +863,8 @@
 				$('#fontB').val(font_eorzea_blackletter);
 			} else if(id == "font_eorzea_dotB"){
 				$('#fontB').val(font_eorzea_dot);
+			} else if(id == "font_eorzea_cursiveB"){
+				$('#fontB').val(font_eorzea_cursive);
 			} else if(id == "font_kugane_dotB"){
 				$('#fontB').val(font_kugane_dot);
 			} else if(id == "font_norvrandt_dotB"){
@@ -903,13 +908,15 @@
 			} else if(id == "font_eorzeaC"){
 				$('#fontC').val(font_eorzea);
 			} else if(id == "font_near_easternC"){
-			$('#fontC').val(font_near_eastern);
+				$('#fontC').val(font_near_eastern);
 			} else if(id == "font_ff14_figureC"){
-			$('#fontC').val(font_ff14_figure);
+				$('#fontC').val(font_ff14_figure);
 			} else if(id == "font_eorzea_blackletterC"){
 				$('#fontC').val(font_eorzea_blackletter);
 			} else if(id == "font_eorzea_dotC"){
 				$('#fontC').val(font_eorzea_dot);
+			} else if(id == "font_eorzea_cursiveC"){
+				$('#fontC').val(font_eorzea_cursive);
 			} else if(id == "font_kugane_dotC"){
 				$('#fontC').val(font_kugane_dot);
 			} else if(id == "font_norvrandt_dotC"){
