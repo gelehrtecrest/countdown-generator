@@ -1099,6 +1099,7 @@
 		//text
 		url = url + '&text' + t + '=' + encodeURIComponent($('#text' + t).val());
 		url = url + '&color' + t + '=' + encodeURIComponent($('#color' + t).val());
+		url = url + '&shadow' + t + '=' + encodeURIComponent($('#color_shadow' + t).val());
 		if($('#color_shadow_flag' + t).prop('checked')){
 			url = url + '&shadowlag' + t + '=1';
 		} else {
