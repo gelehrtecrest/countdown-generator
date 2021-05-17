@@ -6,3 +6,6 @@
 .btn-black:hover{
 	color: gray;
 }
+.copy_alert {
+	display: none;
+}

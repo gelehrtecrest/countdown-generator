@@ -318,33 +318,59 @@
 		var queries = (parameters[1] || 'dummy=dummy').split('&');
 		i = 0;
 
-		for(i; i < queries.length; i ++) {
-			var t = queries[i].split('=');
-			if(t['0'] == 'logourl'){
-				$('#logourl').val(decodeURIComponent(t['1']));
-			} else if(t['0'] == 'xpos'){
-				imageIni.xPos = parseFloat(t['1']);
-			} else if(t['0'] == 'ypos'){
-				imageIni.yPos = parseFloat(t['1']);
-			} else if(t['0'] == 'scale'){
-				imageIni.Scale = parseFloat(t['1']);
-			} else if(t['0'] == 'text'){
-				$('#text').val(decodeURIComponent(t['1']));
-			} else if(t['0'] == 'color'){
-				$('#color').val(decodeURIComponent(t['1']));
-			} else if(t['0'] == 'style'){
-				$('#style').val(decodeURIComponent(t['1']));
-			} else if(t['0'] == 'font'){
-				$('#font').val(decodeURIComponent(t['1']));
-			} else if(t['0'] == 'px'){
-				$('#px').val(decodeURIComponent(t['1']));
-			} else if(t['0'] == 'title'){
-				$('title').text(decodeURIComponent(t['1']));
-				$('h1').text(decodeURIComponent(t['1']));
-			} else if(t['0'] == 'comment'){
-				$('#comment').text(decodeURIComponent(t['1']));
+		console.log(queries);
+		imageIni  = getqueries(queries, imageIni, '');
+		imageIniB = getqueries(queries, imageIniB, 'B');
+		imageIniC = getqueries(queries, imageIniC, 'C');
+		//getqueries(queries, imageIni, '');
+		//getqueries(queries, imageIniB, 'B');
+		//getqueries(queries, imageIniC, 'C');
+/*
+		function getqueries(queries, imageIni, t){
+			for(i; i < queries.length; i ++) {
+				var t = queries[i].split('=');
+				if(t['0'] == 'logourl' + t){
+					$('#logourl' + t).val(decodeURIComponent(t['1']));
+				} else if(t['0'] == 'xpos' + t){
+					imageIni.xPos = parseFloat(t['1']);
+				} else if(t['0'] == 'ypos' + t){
+					imageIni.yPos = parseFloat(t['1']);
+				} else if(t['0'] == 'scale' + t){
+					imageIni.Scale = parseFloat(t['1']);
+				} else if(t['0'] == 'text' + t){
+					$('#text' + t).val(decodeURIComponent(t['1']));
+				} else if(t['0'] == 'color' + t){
+					$('#color' + t).val(decodeURIComponent(t['1']));
+				} else if(t['0'] == 'shadow' + t){
+					$('#color_shadow' + t).val(decodeURIComponent(t['1']));
+				} else if(t['0'] == 'shadowflag' + t){
+					if(decodeURIComponent(t['1']) == 1){
+						$('#color_shadow_flag' + t).prop('checked', true);
+					} else {
+						$('#color_shadow_flag' + t).prop('checked', false);
+					}
+				} else if(t['0'] == 'outlineflag' + t){
+					if(decodeURIComponent(t['1']) == 1){
+						$('#color_outline_flag' + t).prop('checked', true);
+					} else {
+						$('#color_outline_flag' + t).prop('checked', false);
+					}
+				} else if(t['0'] == 'style' + t){
+					$('#style' + t).val(decodeURIComponent(t['1']));
+				} else if(t['0'] == 'font' + t){
+					$('#font' + t).val(decodeURIComponent(t['1']));
+				} else if(t['0'] == 'px' + t){
+					$('#px' + t).val(decodeURIComponent(t['1']));
+				} else if(t['0'] == 'title'){
+					$('title').text(decodeURIComponent(t['1']));
+					$('h1').text(decodeURIComponent(t['1']));
+				} else if(t['0'] == 'comment'){
+					$('#comment').text(decodeURIComponent(t['1']));
+				}
 			}
+			return imageIni;
 		}
+*/
 
 		//イベント関連処理
 		//画像読込
@@ -563,7 +589,7 @@
 			}
 
 			//画面操作時はURLを再生成する
-			write_settingurl(imageIni);
+			//write_settingurl(imageIni);
 		}
 		//$('.btn').on('click', function(e){
 		//	editgenerator_button = e.target.id;
@@ -626,7 +652,9 @@
 		});
 
 		//初回URL生成
-		write_settingurl(imageIni);
+		//write_settingurl(imageIni);
+		//URLコピー
+		geturl(imageIni, imageIniB, imageIniC);
 
 		//Canvas Download
 		$('#btnDownload').on("click", function() {
@@ -997,6 +1025,61 @@
 	});
 
 
+	function getqueries(queries, imageIni, queryflag){
+		console.log(imageIni);
+		console.log(queryflag);
+		for(i=0; i < queries.length; i ++) {
+			var t = queries[i].split('=');
+			console.log(t['0']);
+			console.log(t['1']);
+			console.log(queryflag);
+			if(t['0'] == 'logourl' + queryflag){
+				$('#logourl' + queryflag).val(decodeURIComponent(t['1']));
+			} else if(t['0'] == 'xpos' + queryflag){
+				imageIni.xPos = parseFloat(t['1']);
+			} else if(t['0'] == 'ypos' + queryflag){
+				imageIni.yPos = parseFloat(t['1']);
+			} else if(t['0'] == 'scale' + queryflag){
+				imageIni.Scale = parseFloat(t['1']);
+			} else if(t['0'] == 'text' + queryflag){
+				console.log('text' + queryflag);
+				$('#text' + queryflag).val(decodeURIComponent(t['1']));
+			} else if(t['0'] == 'color' + queryflag){
+				$('#color' + queryflag).val(decodeURIComponent(t['1']));
+			} else if(t['0'] == 'shadow' + queryflag){
+				$('#color_shadow' + queryflag).val(decodeURIComponent(t['1']));
+			} else if(t['0'] == 'shadowflag' + queryflag){
+				console.log(t['0']);
+				console.log(t['1']);
+				if(decodeURIComponent(t['1']) == 1){
+					$('#color_shadow_flag' + queryflag).prop('checked', true);
+				} else {
+					$('#color_shadow_flag' + queryflag).prop('checked', false);
+				}
+			} else if(t['0'] == 'outlineflag' + queryflag){
+				if(decodeURIComponent(t['1']) == 1){
+					$('#color_outline_flag' + queryflag).prop('checked', true);
+				} else {
+					$('#color_outline_flag' + queryflag).prop('checked', false);
+				}
+			} else if(t['0'] == 'style' + queryflag){
+				$('#style' + queryflag).val(decodeURIComponent(t['1']));
+			} else if(t['0'] == 'font' + queryflag){
+				$('#font' + queryflag).val(decodeURIComponent(t['1']));
+			} else if(t['0'] == 'px' + queryflag){
+				$('#px' + queryflag).val(decodeURIComponent(t['1']));
+			} else if(t['0'] == 'title'){
+				$('title').text(decodeURIComponent(t['1']));
+				$('h1').text(decodeURIComponent(t['1']));
+			} else if(t['0'] == 'comment'){
+				$('#comment').text(decodeURIComponent(t['1']));
+			}
+		}
+		return imageIni;
+	}
+
+
+
 	//画像先読み込み
 	$(window).on('load',function(){
 		//ガイドラインのロード
@@ -1005,42 +1088,88 @@
 		guidelineImage = new createjs.Bitmap(baseImg2);
 	
 		loadImage(null, null, null);
+
 	});
 
 	// URL生成
-	function geturl(imageIni) {
-		var url;
-		var baseurl = location.href.split('?')[0];
-		url = baseurl;
+	function subgeturl(imageIni, t) {
+		var url = '';
 
 		//設定をgetに追加
 		//text
-		url = url + '?text=' + encodeURIComponent($('#text').val());
-		url = url + '&color=' + encodeURIComponent($('#color').val());
-		url = url + '&px=' + encodeURIComponent($('#px').val());
-		url = url + '&style=' + encodeURIComponent($('#style').val());
-		url = url + '&font=' + encodeURIComponent($('#font').val());
+		url = url + '&text' + t + '=' + encodeURIComponent($('#text' + t).val());
+		url = url + '&color' + t + '=' + encodeURIComponent($('#color' + t).val());
+		if($('#color_shadow_flag' + t).prop('checked')){
+			url = url + '&shadowlag' + t + '=1';
+		} else {
+			url = url + '&shadowflag' + t + '=0';
+		}
+		if($('#color_outline_flag' + t).prop('checked')){
+			url = url + '&outlineflag' + t + '=1';
+		} else {
+			url = url + '&outlineflag' + t + '=0';
+		}
+		url = url + '&px' + t + '=' + encodeURIComponent($('#px' + t).val());
+		url = url + '&style' + t + '=' + encodeURIComponent($('#style' + t).val());
+		url = url + '&font' + t + '=' + encodeURIComponent($('#font' + t).val());
 		//ロゴ位置・サイズ
-		url = url + '&xpos=' + imageIni.xPos;
-		url = url + '&ypos=' + imageIni.yPos;
-		url = url + '&scale=' + imageIni.Scale;
+		url = url + '&xpos' + t + '=' + imageIni.xPos;
+		url = url + '&ypos' + t + '=' + imageIni.yPos;
+		url = url + '&scale' + t + '=' + imageIni.Scale;
 		//ロゴ読み出し場所
 		if($('input[name=logo]:checked').val() === 'local'){
 			url = url + '&logo=local';
 		}
 		//タイトル
-		url = url + '&title=' + encodeURIComponent($('title').text());
+		url = url + '&title' + t + '=' + encodeURIComponent($('title').text());
 		//コメント
-		url = url + '&comment=' + encodeURIComponent($('#comment').text());
+		url = url + '&comment' + t + '=' + encodeURIComponent($('#comment').text());
 		return url;
 	}
 
+	function geturl(imageIni, imageIniB, imageIniC){
+		$('#js-copybtn').on('click', function(){
+			var url;
+			var baseurl = location.href.split('?')[0];
+			url = baseurl;
+			var urlA = subgeturl(imageIni,  '');
+			console.log(urlA);
+			console.log(imageIniB);
+			var urlB = subgeturl(imageIniB, 'B');
+			console.log(urlB);
+			var urlC = subgeturl(imageIniC, 'C');
+			console.log(urlC);
+
+			//タイトル
+			url = url + '?title=' + encodeURIComponent($('title').text());
+			//タブA
+			url = url + urlA;
+			//タブB
+			url = url + urlB;
+			//タブC
+			url = url + urlC;
+			//コメント
+			url = url + '&comment=' + encodeURIComponent($('#comment').text());
+
+
+			let $textarea = $('<textarea></textarea>');
+			$textarea.text(url);
+			$(this).append($textarea);
+			$textarea.select();
+			document.execCommand('copy');
+			$textarea.remove();
+			$('#js-copyalert').show().delay(2000).fadeOut(400);
+		});
+	}
+
 	// URL書き込み
+	/*
 	function write_settingurl(imageIni) {
 		var url = geturl(imageIni);
 		$('#settingurl a').text(url);
 		$('#settingurl a').attr('href', url);
 	}
+	*/
 })($);
 
 function DownloadStart(){
