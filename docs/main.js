@@ -2,7 +2,32 @@
 	// フォントロード
 	WebFont.load({
 		custom: {
-			families: ['Norvrandt','Norvrandt5','Kugane', '@Kugane','NieR','Eorzea', 'Allagan', 'Near-Eastern', 'Eden', 'Eorzea-Blackletter','TrainOne','Stick','RocknRollOne','ReggaeOne','RampartOne','KleeOne','KleeOne-SemiBold','DotGothic16','EorzeaDot','KuganeDot','NorvrandtDot','NorvrandtDot5','EorzeaCursive'],
+			families: [
+				'Norvrandt',
+				'Norvrandt5',
+				'Kugane',
+				'@Kugane',
+				'NieR',
+				'Eorzea',
+				'Allagan',
+				'Near-Eastern',
+				'Eden',
+				'Eorzea-Blackletter',
+				'TrainOne',
+				'Stick',
+				'RocknRollOne',
+				'ReggaeOne',
+				'RampartOne',
+				'KleeOne',
+				'KleeOne-SemiBold',
+				'DotGothic16',
+				'EorzeaDot',
+				'KuganeDot',
+				'NorvrandtDot',
+				'NorvrandtDot5',
+				'EorzeaCursive',
+				'EorzeaMaru'
+			],
 			urls: ['style.css']
 		},
 		loading: function() {

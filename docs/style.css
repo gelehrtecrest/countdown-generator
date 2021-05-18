@@ -117,6 +117,11 @@ body {
         font-family:'EorzeaCursive';
         src:url('https://gelehrtecrest.github.io/countdown-generator/gelefont/EorzeaCursive-Regular.woff') format('woff');
 }
+@font-face{
+        font-family:'EorzeaMaru';
+        src:url('https://gelehrtecrest.github.io/countdown-generator/gelefont/EorzeaMaru-Regular.woff') format('woff');
+}
+
 
 
 
