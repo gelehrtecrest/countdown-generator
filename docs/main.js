@@ -26,7 +26,8 @@
 				'NorvrandtDot',
 				'NorvrandtDot5',
 				'EorzeaCursive',
-				'EorzeaMaru'
+				'EorzeaMaru',
+				'Tougyou'
 			],
 			urls: ['style.css']
 		},

@@ -121,6 +121,11 @@ body {
         font-family:'EorzeaMaru';
         src:url('https://gelehrtecrest.github.io/countdown-generator/gelefont/EorzeaMaru-Regular.woff') format('woff');
 }
+@font-face{
+        font-family:'Tougyou';
+        src:url('https://gelehrtecrest.github.io/countdown-generator/gelefont/Tougyou-Regular.woff') format('woff');
+}
+
 
 
 
