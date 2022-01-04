@@ -125,6 +125,10 @@ body {
         font-family:'Tougyou';
         src:url('https://gelehrtecrest.github.io/countdown-generator/gelefont/Tougyou-Regular.woff') format('woff');
 }
+@font-face{
+	font-family:'Etheirys';
+	src:url('https://gelehrtecrest.github.io/etheirys-font/fonts/Etheirys-Regular.woff') format('woff');
+}
 
 
 
