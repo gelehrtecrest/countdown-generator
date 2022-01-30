@@ -129,6 +129,10 @@ body {
 	font-family:'Etheirys';
 	src:url('https://gelehrtecrest.github.io/etheirys-font/fonts/Etheirys-Regular.woff') format('woff');
 }
+@font-face{
+	font-family:'Thavnair';
+	src:url('https://gelehrtecrest.github.io/thavnair-font/fonts/Thavnair-Regular.woff') format('woff');
+}
 
 
 
