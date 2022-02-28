@@ -30,6 +30,7 @@
 				'EorzeaMaru',
 				'Tougyou',
 				'Etheirys',
+				'Thavnair',
 			],
 			urls: ['style.css']
 		},
@@ -78,6 +79,7 @@
 	const font_norvrandt_dot = "/1.5 'NorvrandtDot','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_norvrandt5_dot = "/1.5 'NorvrandtDot5','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_etheirys = "/1.5 'Etheirys','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_thavnair = "/1.5 'Thavnair','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 
 	// fontworks様のフォント
 	const font_trainone = "/1.5 'TrainOne','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
@@ -879,6 +881,8 @@
 				$('#font').val(font_norvrandt5_dot);
 			} else if(id == "font_etheirys"){
 				$('#font').val(font_etheirys);
+			} else if(id == "font_thavnair"){
+				$('#font').val(font_thavnair);
 			} else if(id == "font_trainone"){
 				$('#font').val(font_trainone);
 			} else if(id == "font_stick"){
@@ -937,6 +941,8 @@
 				$('#fontB').val(font_norvrandt5_dot);
 			} else if(id == "font_etheirysB"){
 				$('#fontB').val(font_etheirys);
+			} else if(id == "font_thavnairB"){
+				$('#fontB').val(font_thavnair);
 			} else if(id == "font_trainoneB"){
 				$('#fontB').val(font_trainone);
 			} else if(id == "font_stickB"){
@@ -993,6 +999,8 @@
 				$('#fontC').val(font_norvrandt5_dot);
 			} else if(id == "font_etheirysC"){
 				$('#fontC').val(font_etheirys);
+			} else if(id == "font_thavnairC"){
+				$('#fontC').val(font_thavnair);
 			} else if(id == "font_trainoneC"){
 				$('#fontC').val(font_trainone);
 			} else if(id == "font_stickC"){
