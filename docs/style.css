@@ -50,6 +50,10 @@ body {
 	src:url('https://gelehrtecrest.github.io/eorzea-font/fonts/Eorzea-Regular.woff') format('woff');
 }
 @font-face{
+	font-family:'Eorzea2';
+	src:url('https://gelehrtecrest.github.io/eorzea-font/v2.0/fonts/Eorzea-Regular.woff') format('woff');
+}
+@font-face{
         font-family:'Allagan';
         src:url('https://gelehrtecrest.github.io/allagan-font/fonts/Allagan-Regular.woff') format('woff');
 }
