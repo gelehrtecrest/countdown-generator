@@ -9,7 +9,7 @@
 				'@Kugane',
 				'NieR',
 				'Eorzea',
-				'Eorzea2',
+				'EorzeaSmart',
 				'Allagan',
 				'Near-Eastern',
 				'Eden',
