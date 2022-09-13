@@ -29,6 +29,7 @@
 				'EorzeaCursive',
 				'EorzeaMaru',
 				'EorzeaSquare',
+				'EorzeaEase',
 				'Tougyou',
 				'Etheirys',
 				'Thavnair',
@@ -78,6 +79,7 @@
 	const font_eorzea_cursive = "/1.5 'EorzeaCursive','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_eorzea_maru = "/1.5 'EorzeaMaru','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_eorzea_square = "/1.5 'EorzeaSquare','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
+	const font_eorzea_ease = "/1.5 'EorzeaEase','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_kugane_dot = "/1.5 'KuganeDot','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_norvrandt_dot = "/1.5 'NorvrandtDot','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
 	const font_norvrandt5_dot = "/1.5 'NorvrandtDot5','ヒラギノ明朝 ProN','Hiragino Mincho ProN','Sawarabi Mincho','Noto Serif CJK JP','MS PMincho',serif";
@@ -880,6 +882,8 @@
 				$('#font').val(font_eorzea_maru);
 			} else if(id == "font_eorzea_square"){
 				$('#font').val(font_eorzea_square);
+			} else if(id == "font_eorzea_ease"){
+				$('#font').val(font_eorzea_ease);
 			} else if(id == "font_kugane_dot"){
 				$('#font').val(font_kugane_dot);
 			} else if(id == "font_norvrandt_dot"){
@@ -944,6 +948,8 @@
 				$('#fontB').val(font_eorzea_maru);
 			} else if(id == "font_eorzea_squareB"){
 				$('#fontB').val(font_eorzea_square);
+			} else if(id == "font_eorzea_easeB"){
+				$('#fontB').val(font_eorzea_ease);
 			} else if(id == "font_kugane_dotB"){
 				$('#fontB').val(font_kugane_dot);
 			} else if(id == "font_norvrandt_dotB"){
@@ -1006,6 +1012,8 @@
 				$('#fontC').val(font_eorzea_maru);
 			} else if(id == "font_eorzea_squareC"){
 				$('#fontC').val(font_eorzea_square);
+			} else if(id == "font_eorzea_easeC"){
+				$('#fontC').val(font_eorzea_ease);
 			} else if(id == "font_kugane_dotC"){
 				$('#fontC').val(font_kugane_dot);
 			} else if(id == "font_norvrandt_dotC"){
