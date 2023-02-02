@@ -77,6 +77,10 @@ body {
 	font-family:'EorzeaEase';
 	src:url('https://gelehrtecrest.github.io/countdown-generator/gelefont/EorzeaEase-Regular.woff') format('woff');
 }
+@font-face{
+	font-family:'EorzeaEaseMaru';
+	src:url('https://gelehrtecrest.github.io/countdown-generator/gelefont/EorzeaEaseMaru-Regular.woff') format('woff');
+}
 @font-face {
 	font-family:"TrainOne";
 	src:url("https://gelehrtecrest.github.io/countdown-generator/fontworks/TrainOne-Regular.ttf") format("truetype");
